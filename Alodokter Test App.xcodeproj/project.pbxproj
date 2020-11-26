@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635C3484256F791000E4F29E /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3483256F791000E4F29E /* NetworkUtil.swift */; };
+		635C3486256F79B600E4F29E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3485256F79B600E4F29E /* Auth.swift */; };
+		635C348A256F7E0700E4F29E /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3489256F7E0700E4F29E /* APIEndPoints.swift */; };
+		635C348C256F7ED400E4F29E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C348B256F7ED400E4F29E /* MainCoordinator.swift */; };
+		635C348F256F7EEE00E4F29E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C348E256F7EEE00E4F29E /* Coordinator.swift */; };
+		635C3491256F7F4B00E4F29E /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3490256F7F4B00E4F29E /* LoginFlowCoordinator.swift */; };
+		635C3493256F800E00E4F29E /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3492256F800E00E4F29E /* LoginBaseViewController.swift */; };
+		635C3496256F825B00E4F29E /* LoginPageContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3495256F825B00E4F29E /* LoginPageContracts.swift */; };
+		635C3499256F826A00E4F29E /* LoginPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3498256F826A00E4F29E /* LoginPageResponse.swift */; };
 		637DE234256F448B0059178E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE233256F448B0059178E /* AppDelegate.swift */; };
 		637DE236256F448B0059178E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE235256F448B0059178E /* SceneDelegate.swift */; };
-		637DE238256F448B0059178E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE237256F448B0059178E /* ViewController.swift */; };
-		637DE23B256F448B0059178E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637DE239256F448B0059178E /* Main.storyboard */; };
 		637DE23D256F448C0059178E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637DE23C256F448C0059178E /* Assets.xcassets */; };
 		637DE240256F448C0059178E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637DE23E256F448C0059178E /* LaunchScreen.storyboard */; };
 		637DE24B256F448C0059178E /* Alodokter_Test_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE24A256F448C0059178E /* Alodokter_Test_AppTests.swift */; };
 		637DE256256F448C0059178E /* Alodokter_Test_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE255256F448C0059178E /* Alodokter_Test_AppUITests.swift */; };
+		637DE26B256F4A570059178E /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE26A256F4A570059178E /* LoginPageViewController.swift */; };
+		637DE26D256F4A610059178E /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE26C256F4A610059178E /* LoginPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +44,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		635C3483256F791000E4F29E /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		635C3485256F79B600E4F29E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		635C3489256F7E0700E4F29E /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		635C348B256F7ED400E4F29E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		635C348E256F7EEE00E4F29E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		635C3490256F7F4B00E4F29E /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
+		635C3492256F800E00E4F29E /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
+		635C3495256F825B00E4F29E /* LoginPageContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageContracts.swift; sourceTree = "<group>"; };
+		635C3498256F826A00E4F29E /* LoginPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageResponse.swift; sourceTree = "<group>"; };
 		637DE230256F448B0059178E /* Alodokter Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alodokter Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		637DE233256F448B0059178E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637DE235256F448B0059178E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		637DE237256F448B0059178E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		637DE23A256F448B0059178E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		637DE23C256F448C0059178E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		637DE23F256F448C0059178E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		637DE241256F448C0059178E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +65,8 @@
 		637DE251256F448C0059178E /* Alodokter Test AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alodokter Test AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		637DE255256F448C0059178E /* Alodokter_Test_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alodokter_Test_AppUITests.swift; sourceTree = "<group>"; };
 		637DE257256F448C0059178E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		637DE26A256F4A570059178E /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		637DE26C256F4A610059178E /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635C3481256F77CD00E4F29E /* Common Component */ = {
+			isa = PBXGroup;
+			children = (
+				635C3482256F78FE00E4F29E /* Network */,
+			);
+			path = "Common Component";
+			sourceTree = "<group>";
+		};
+		635C3482256F78FE00E4F29E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				635C3489256F7E0700E4F29E /* APIEndPoints.swift */,
+				635C3485256F79B600E4F29E /* Auth.swift */,
+				635C3483256F791000E4F29E /* NetworkUtil.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		635C348D256F7ED900E4F29E /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				635C348E256F7EEE00E4F29E /* Coordinator.swift */,
+				635C348B256F7ED400E4F29E /* MainCoordinator.swift */,
+			);
+			path = "App Coordinator";
+			sourceTree = "<group>";
+		};
+		635C3494256F821300E4F29E /* Common Component */ = {
+			isa = PBXGroup;
+			children = (
+				635C3490256F7F4B00E4F29E /* LoginFlowCoordinator.swift */,
+				635C3492256F800E00E4F29E /* LoginBaseViewController.swift */,
+			);
+			path = "Common Component";
+			sourceTree = "<group>";
+		};
+		635C3497256F826000E4F29E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				635C3498256F826A00E4F29E /* LoginPageResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		637DE227256F448B0059178E = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +161,12 @@
 		637DE232256F448B0059178E /* Alodokter Test App */ = {
 			isa = PBXGroup;
 			children = (
-				637DE233256F448B0059178E /* AppDelegate.swift */,
-				637DE235256F448B0059178E /* SceneDelegate.swift */,
-				637DE237256F448B0059178E /* ViewController.swift */,
-				637DE239256F448B0059178E /* Main.storyboard */,
-				637DE23C256F448C0059178E /* Assets.xcassets */,
-				637DE23E256F448C0059178E /* LaunchScreen.storyboard */,
-				637DE241256F448C0059178E /* Info.plist */,
+				637DE263256F49D70059178E /* App Delegate */,
+				637DE267256F4A020059178E /* Assets */,
+				635C3481256F77CD00E4F29E /* Common Component */,
+				637DE264256F49DF0059178E /* Login Flow */,
+				637DE265256F49E70059178E /* Home */,
+				637DE266256F49EB0059178E /* User Profile */,
 			);
 			path = "Alodokter Test App";
 			sourceTree = "<group>";
@@ -126,6 +187,68 @@
 				637DE257256F448C0059178E /* Info.plist */,
 			);
 			path = "Alodokter Test AppUITests";
+			sourceTree = "<group>";
+		};
+		637DE263256F49D70059178E /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				635C348D256F7ED900E4F29E /* App Coordinator */,
+				637DE233256F448B0059178E /* AppDelegate.swift */,
+				637DE235256F448B0059178E /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		637DE264256F49DF0059178E /* Login Flow */ = {
+			isa = PBXGroup;
+			children = (
+				635C3494256F821300E4F29E /* Common Component */,
+				637DE268256F4A1C0059178E /* Login Page */,
+				637DE269256F4A2C0059178E /* Register Page */,
+			);
+			path = "Login Flow";
+			sourceTree = "<group>";
+		};
+		637DE265256F49E70059178E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		637DE266256F49EB0059178E /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		637DE267256F4A020059178E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				637DE23C256F448C0059178E /* Assets.xcassets */,
+				637DE23E256F448C0059178E /* LaunchScreen.storyboard */,
+				637DE241256F448C0059178E /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		637DE268256F4A1C0059178E /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				635C3497256F826000E4F29E /* Response */,
+				637DE26A256F4A570059178E /* LoginPageViewController.swift */,
+				637DE26C256F4A610059178E /* LoginPageViewModel.swift */,
+				635C3495256F825B00E4F29E /* LoginPageContracts.swift */,
+			);
+			path = "Login Page";
+			sourceTree = "<group>";
+		};
+		637DE269256F4A2C0059178E /* Register Page */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Register Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +357,6 @@
 			files = (
 				637DE240256F448C0059178E /* LaunchScreen.storyboard in Resources */,
 				637DE23D256F448C0059178E /* Assets.xcassets in Resources */,
-				637DE23B256F448B0059178E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +381,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				637DE238256F448B0059178E /* ViewController.swift in Sources */,
+				635C3484256F791000E4F29E /* NetworkUtil.swift in Sources */,
+				635C3499256F826A00E4F29E /* LoginPageResponse.swift in Sources */,
+				635C3493256F800E00E4F29E /* LoginBaseViewController.swift in Sources */,
+				635C348C256F7ED400E4F29E /* MainCoordinator.swift in Sources */,
+				637DE26B256F4A570059178E /* LoginPageViewController.swift in Sources */,
+				637DE26D256F4A610059178E /* LoginPageViewModel.swift in Sources */,
+				635C3491256F7F4B00E4F29E /* LoginFlowCoordinator.swift in Sources */,
+				635C3496256F825B00E4F29E /* LoginPageContracts.swift in Sources */,
+				635C348A256F7E0700E4F29E /* APIEndPoints.swift in Sources */,
 				637DE234256F448B0059178E /* AppDelegate.swift in Sources */,
 				637DE236256F448B0059178E /* SceneDelegate.swift in Sources */,
+				635C3486256F79B600E4F29E /* Auth.swift in Sources */,
+				635C348F256F7EEE00E4F29E /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +429,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		637DE239256F448B0059178E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				637DE23A256F448B0059178E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		637DE23E256F448C0059178E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,7 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Alodokter Test App/Info.plist";
+				INFOPLIST_FILE = "Alodokter Test App/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Alodokter Test App/Info.plist";
+				INFOPLIST_FILE = "Alodokter Test App/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
