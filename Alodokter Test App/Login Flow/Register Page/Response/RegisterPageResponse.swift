@@ -13,7 +13,7 @@ final class RegisterPageResponse: Codable {
         NetworkUtil.request(from: APIEndPoints.register.urlString,
                             responseType: self,
                             httpMethod: .post,
-                            parameters: nil,
+                            parameters: parameters,
                             onSuccess: onSuccess,
                             onFailure: onFailure)
     }

@@ -6,4 +6,7 @@
 //  Copyright © 2020 David Jordan Manalu. All rights reserved.
 //
 
-import Foundation
+protocol LoginPageViewModelAction: AnyObject {
+    func handleUnauthorized()
+    func login()
+}

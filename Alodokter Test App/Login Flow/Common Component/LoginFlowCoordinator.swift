@@ -27,7 +27,7 @@ final class LoginFlowCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func start() {
-        let loginPageVC: LoginPageViewController = LoginPageViewController()
+        let loginPageVC: LoginPageViewController = LoginPageViewController.constructController()
         
         loginPageVC.coordinator = self
         

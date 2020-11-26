@@ -30,13 +30,16 @@ final class LoginPageViewController: LoginBaseViewController {
         return passwordField
     }()
     
-    lazy var loginButton: CommonButton = {
+    private lazy var loginButton: CommonButton = {
         let loginButton: CommonButton = CommonButton(isButtonActived: false)
         
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         loginButton.setTitle("Login", for: .normal)
         
         return loginButton
     }()
+    
+    private let viewModel: LoginPageViewModel
     
     // MARK: - View Life Cycle
     
@@ -56,6 +59,29 @@ final class LoginPageViewController: LoginBaseViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    // MARK: - Init
+    
+    init(viewModel: LoginPageViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        self.viewModel.action = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Static Methods
+    
+    static func constructController() -> LoginPageViewController {
+        let viewModel: LoginPageViewModel = LoginPageViewModel(dependency: LoginPageViewModelDependency())
+        let viewController: LoginPageViewController = LoginPageViewController(viewModel: viewModel)
+        
+        return viewController
     }
     
     // MARK: - Private Methods
@@ -159,5 +185,23 @@ final class LoginPageViewController: LoginBaseViewController {
     @objc
     private func registerButtonTapped() {
         coordinator?.navigateToRegisterPage()
+    }
+    
+    @objc
+    private func loginButtonTapped() {
+        viewModel.email = emailField.textField.text ?? ""
+        viewModel.password = passwordField.textField.text ?? ""
+        
+        viewModel.login()
+    }
+}
+
+extension LoginPageViewController: LoginPageViewModelAction {
+    func handleUnauthorized() {
+        BannerView.showBannerView(on: self, text: "Failed to login, check email and password.", buttonLabel: "Okay", duration: 5.0)
+    }
+    
+    func login() {
+        
     }
 }

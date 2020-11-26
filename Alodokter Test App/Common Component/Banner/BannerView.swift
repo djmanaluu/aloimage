@@ -65,7 +65,7 @@ final class BannerView: UIView {
         let contentLabel: UILabel = UILabel()
         let actionButton: UIButton = UIButton()
         
-        backgroundColor = .yellow
+        backgroundColor = .alert
         
         layer.cornerRadius = 10.0
         

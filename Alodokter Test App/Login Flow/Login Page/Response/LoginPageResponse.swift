@@ -14,11 +14,15 @@ final class LoginPageResponse: Codable {
     
     // MARK: - Static Methods
     
-    static func request(header: [String: String], httpStatusCodeHandler: @escaping (Int) -> Bool, onSuccess: @escaping (LoginPageResponse) -> Void, onFailure: @escaping (Error) -> Void) {
+    static func request(header: [String: String],
+                        httpStatusCodeHandler: @escaping (Int) -> Bool,
+                        onSuccess: @escaping (LoginPageResponse) -> Void,
+                        onFailure: @escaping (Error) -> Void) {
         NetworkUtil.request(from: APIEndPoints.login.urlString,
                             responseType: self,
                             httpMethod: .post,
                             parameters: nil,
+                            httpStatusCodeHandler: httpStatusCodeHandler,
                             onSuccess: onSuccess,
                             onFailure: onFailure)
     }

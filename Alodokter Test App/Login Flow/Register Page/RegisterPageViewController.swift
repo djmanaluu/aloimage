@@ -170,7 +170,7 @@ final class RegisterPageViewController: LoginBaseViewController {
         viewModel.password = passwordField.textField.text ?? ""
         viewModel.reenterPassword = reenterPasswordField.textField.text ?? ""
         
-        viewModel.onRegisterButtonTapped()
+        viewModel.register()
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    // MARK: - View Life Cycle
+    // MARK: - Properties
     
     var loadingView: LoadingStateView = LoadingStateView()
     
@@ -25,6 +25,8 @@ class BaseViewController: UIViewController {
 
         return UIBarButtonItem(customView: backButton)
     }()
+    
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -37,7 +37,7 @@ final class RegisterPageViewModel {
     
     // MARK: - Public Methods
     
-    func onRegisterButtonTapped() {
+    func register() {
         guard password == reenterPassword else {
             action?.hideLoadingView()
             action?.showBanner(text: "Password and Reenter Password is not match")
@@ -48,7 +48,7 @@ final class RegisterPageViewModel {
         action?.showLoadingView()
         
         let parameters: [String: String] = [
-            "email": email,
+            "email": email.lowercased(),
             "password": password
         ]
         
@@ -58,7 +58,7 @@ final class RegisterPageViewModel {
         }) { [weak self] error in
             self?.action?.hideLoadingView()
             self?.action?.showNetworkError { [weak self] in
-                self?.onRegisterButtonTapped()
+                self?.register()
             }
         }
     }
