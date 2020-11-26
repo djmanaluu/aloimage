@@ -74,12 +74,12 @@ final class LoginPageViewController: LoginBaseViewController {
         titleLabel.text = "aloimage"
         
         dontHaveAccountLabel.font = .systemFont(ofSize: 12.0)
-        dontHaveAccountLabel.text = "Don't have account? Let's join us!!"
+        dontHaveAccountLabel.text = "Don't have account? Let's join us."
         dontHaveAccountLabel.textAlignment = .center
         
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         registerButton.titleLabel?.font = .systemFont(ofSize: 14.0)
-        registerButton.setTitle("Register Here!!!", for: .normal)
+        registerButton.setTitle("Register Here", for: .normal)
         registerButton.setTitleColor(.themePrimary, for: .normal)
         
         view.addSubview(container)
