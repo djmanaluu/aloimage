@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    func makeConstraint(_ block: (ConstraintMaker) -> Void) {
+    func makeConstraints(_ block: (ConstraintMaker) -> Void) {
         translatesAutoresizingMaskIntoConstraints = false
         let maker: ConstraintMaker = ConstraintMaker(currentView: self)
         block(maker)

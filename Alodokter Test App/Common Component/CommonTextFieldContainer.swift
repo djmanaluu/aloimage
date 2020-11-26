@@ -33,7 +33,7 @@ final class CommonTextFieldContainer: UIView {
         
         addSubview(textField)
         
-        textField.makeConstraint { make in
+        textField.makeConstraints { make in
             make.top.left.equalTo(self, constant: 12.0)
             make.right.bottom.equalTo(self, constant: -12.0)
         }

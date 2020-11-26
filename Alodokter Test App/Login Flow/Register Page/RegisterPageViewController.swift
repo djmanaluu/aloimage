@@ -78,40 +78,40 @@ final class RegisterPageViewController: LoginBaseViewController {
         container.addSubview(reenterPasswordField)
         container.addSubview(registerButton)
         
-        container.makeConstraint { make in
+        container.makeConstraints { make in
             make.left.right.centerY.equalTo(view)
         }
         
-        logoImageView.makeConstraint { make in
+        logoImageView.makeConstraints { make in
             make.top.equalTo(container, constant: 24.0)
             make.centerX.equalTo(container)
             make.size.equalToConstant(64.0)
         }
         
-        titleLabel.makeConstraint { make in
+        titleLabel.makeConstraints { make in
             make.top.equalTo(logoImageView, position: .bottom, constant: 12.0)
             make.centerX.equalTo(container)
         }
         
-        emailField.makeConstraint { make in
+        emailField.makeConstraints { make in
             make.top.equalTo(titleLabel, position: .bottom, constant: 12.0)
             make.left.equalTo(container, constant: 16.0)
             make.right.equalTo(container, constant: -16.0)
         }
         
-        passwordField.makeConstraint { make in
+        passwordField.makeConstraints { make in
             make.top.equalTo(emailField, position: .bottom, constant: 12.0)
             make.left.equalTo(container, constant: 16.0)
             make.right.equalTo(container, constant: -16.0)
         }
         
-        reenterPasswordField.makeConstraint { make in
+        reenterPasswordField.makeConstraints { make in
             make.top.equalTo(passwordField, position: .bottom, constant: 16.0)
             make.left.equalTo(container, constant: 16.0)
             make.right.equalTo(container, constant: -16.0)
         }
         
-        registerButton.makeConstraint { make in
+        registerButton.makeConstraints { make in
             make.top.equalTo(reenterPasswordField, position: .bottom, constant: 16.0)
             make.bottom.equalTo(container)
             make.left.equalTo(container, constant: 16.0)

@@ -34,6 +34,7 @@
 		63FFDF7A256FAF7A00016A00 /* RegisterPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF79256FAF7A00016A00 /* RegisterPageViewModel.swift */; };
 		63FFDF7C256FAF8200016A00 /* RegisterPageContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF7B256FAF8200016A00 /* RegisterPageContracts.swift */; };
 		63FFDF7F256FAF9900016A00 /* RegisterPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF7E256FAF9900016A00 /* RegisterPageResponse.swift */; };
+		63FFDF82256FB1E900016A00 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF81256FB1E900016A00 /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		63FFDF79256FAF7A00016A00 /* RegisterPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewModel.swift; sourceTree = "<group>"; };
 		63FFDF7B256FAF8200016A00 /* RegisterPageContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageContracts.swift; sourceTree = "<group>"; };
 		63FFDF7E256FAF9900016A00 /* RegisterPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageResponse.swift; sourceTree = "<group>"; };
+		63FFDF81256FB1E900016A00 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		635C3481256F77CD00E4F29E /* Common Component */ = {
 			isa = PBXGroup;
 			children = (
+				63FFDF80256FB1DF00016A00 /* Banner */,
 				635C34A1256F8EB600E4F29E /* Base */,
 				635C3482256F78FE00E4F29E /* Network */,
 				635C349C256F8E3C00E4F29E /* Util */,
@@ -305,6 +308,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		63FFDF80256FB1DF00016A00 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDF81256FB1E900016A00 /* BannerView.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +466,7 @@
 				635C3496256F825B00E4F29E /* LoginPageContracts.swift in Sources */,
 				635C348A256F7E0700E4F29E /* APIEndPoints.swift in Sources */,
 				637DE234256F448B0059178E /* AppDelegate.swift in Sources */,
+				63FFDF82256FB1E900016A00 /* BannerView.swift in Sources */,
 				637DE236256F448B0059178E /* SceneDelegate.swift in Sources */,
 				635C3486256F79B600E4F29E /* Auth.swift in Sources */,
 				635C348F256F7EEE00E4F29E /* Coordinator.swift in Sources */,
