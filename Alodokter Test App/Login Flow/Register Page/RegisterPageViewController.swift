@@ -14,8 +14,8 @@ final class RegisterPageViewController: LoginBaseViewController {
     private lazy var emailField: CommonTextFieldContainer = {
         let emailTextField: CommonTextFieldContainer = CommonTextFieldContainer()
         
-        emailTextField.textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
-        emailTextField.textField.placeholder = "Email"
+        emailTextField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
+        emailTextField.placeholder = "Email"
         
         return emailTextField
     }()
@@ -23,9 +23,9 @@ final class RegisterPageViewController: LoginBaseViewController {
     private lazy var passwordField: CommonTextFieldContainer = {
         let passwordField: CommonTextFieldContainer = CommonTextFieldContainer()
         
-        passwordField.textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
-        passwordField.textField.isSecureTextEntry = true
-        passwordField.textField.placeholder = "Password"
+        passwordField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
+        passwordField.isSecureTextEntry = true
+        passwordField.placeholder = "Password"
         
         return passwordField
     }()
@@ -33,9 +33,9 @@ final class RegisterPageViewController: LoginBaseViewController {
     private lazy var reenterPasswordField: CommonTextFieldContainer = {
         let reenterPasswordField: CommonTextFieldContainer = CommonTextFieldContainer()
         
-        reenterPasswordField.textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
-        reenterPasswordField.textField.isSecureTextEntry = true
-        reenterPasswordField.textField.placeholder = "Reenter Password"
+        reenterPasswordField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
+        reenterPasswordField.isSecureTextEntry = true
+        reenterPasswordField.placeholder = "Reenter Password"
         
         return reenterPasswordField
     }()
@@ -149,9 +149,9 @@ final class RegisterPageViewController: LoginBaseViewController {
     
     @objc
     private func onTextFieldChanged() {
-        if !(emailField.textField.text?.isEmpty ?? true) &&
-            !(passwordField.textField.text?.isEmpty ?? true) &&
-            !(reenterPasswordField.textField.text?.isEmpty ?? true) {
+        if !(emailField.text?.isEmpty ?? true) &&
+            !(passwordField.text?.isEmpty ?? true) &&
+            !(reenterPasswordField.text?.isEmpty ?? true) {
             registerButton.isActived(true)
         }
         else {
@@ -166,9 +166,9 @@ final class RegisterPageViewController: LoginBaseViewController {
     
     @objc
     private func registerButtonTapped() {
-        viewModel.email = emailField.textField.text ?? ""
-        viewModel.password = passwordField.textField.text ?? ""
-        viewModel.reenterPassword = reenterPasswordField.textField.text ?? ""
+        viewModel.email = emailField.text ?? ""
+        viewModel.password = passwordField.text ?? ""
+        viewModel.reenterPassword = reenterPasswordField.text ?? ""
         
         viewModel.register()
     }

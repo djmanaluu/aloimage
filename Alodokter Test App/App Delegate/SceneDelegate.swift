@@ -11,14 +11,14 @@ import UIKit
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    var coordinator: MainCoordinator?
+    var coordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        MainCoordinator.shared.start()
+        AppCoordinator.shared.start()
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = MainCoordinator.shared.navigationController
+        window?.rootViewController = AppCoordinator.shared.navigationController
         window?.makeKeyAndVisible()
     }
 

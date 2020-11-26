@@ -8,9 +8,7 @@
 
 import UIKit
 
-final class CommonTextFieldContainer: UIView {
-    lazy var textField: UITextField = UITextField()
-    
+final class CommonTextFieldContainer: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -24,18 +22,30 @@ final class CommonTextFieldContainer: UIView {
     // MARK: - Private Methods
     
     private func setupView() {
+        let leftView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 16.0))
+        let rightView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 16.0))
+        
         layer.borderColor = UIColor.themePrimary.cgColor
         layer.borderWidth = 2.0
         layer.cornerRadius = 10.0
+        self.leftView = leftView
+        self.rightView = rightView
         
-        textField.font = .systemFont(ofSize: 12.0)
-        textField.textColor = .themePrimary
+        leftViewMode = .always
+        rightViewMode = .always
         
-        addSubview(textField)
+        font = .systemFont(ofSize: 12.0)
+        textColor = .themePrimary
         
-        textField.makeConstraints { make in
-            make.top.left.equalTo(self, constant: 12.0)
-            make.right.bottom.equalTo(self, constant: -12.0)
+        makeConstraints { make in
+            make.height.equalToConstant(36.0)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    private func onTapView() {
+        
     }
 }

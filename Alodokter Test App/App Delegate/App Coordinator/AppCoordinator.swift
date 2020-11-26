@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  AppCoordinator.swift
 //  Alodokter Test App
 //
 //  Created by David Jordan Manalu on 26/11/20.
@@ -31,8 +31,7 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         childCoordinators = []
-//        Auth.isTokenAvailable ? openMainFlow() : openLogInFlow()
-        openMainFlow()
+        Auth.isTokenAvailable ? openHomeFlow() : openLogInFlow()
     }
     
     func openLogInFlow() {
@@ -47,6 +46,10 @@ final class AppCoordinator: Coordinator {
     func openMainFlow() {
         navigationController.viewControllers.removeAll()
         
+        let child: TabbarCoordinator = TabbarCoordinator(parentCoordinator: self, navigationController: navigationController)
+        
+        childCoordinators.append(child)
+        child.start()
     }
     
     func childDidFinish(_ child: Coordinator?) {

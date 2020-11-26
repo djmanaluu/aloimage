@@ -11,7 +11,9 @@ import UIKit
 final class LoginFlowCoordinator: Coordinator {
     // MARK: - Properties
     
-    weak var parentCoordinator: MainCoordinator?
+    var parentCoordinator: Coordinator?
+    
+    var type: CoordinatorType { return .login }
     
     var childCoordinators: [Coordinator] = []
     
@@ -19,7 +21,7 @@ final class LoginFlowCoordinator: Coordinator {
     
     // MARK: - Init
     
-    init(parentCoordinator: MainCoordinator, navigationController: UINavigationController) {
+    init(parentCoordinator: Coordinator, navigationController: UINavigationController) {
         self.parentCoordinator = parentCoordinator
         self.navigationController = navigationController
     }

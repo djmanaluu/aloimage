@@ -14,8 +14,8 @@ final class LoginPageViewController: LoginBaseViewController {
     private lazy var emailField: CommonTextFieldContainer = {
         let emailTextField: CommonTextFieldContainer = CommonTextFieldContainer()
         
-        emailTextField.textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
-        emailTextField.textField.placeholder = "Email"
+        emailTextField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
+        emailTextField.placeholder = "Email"
         
         return emailTextField
     }()
@@ -23,9 +23,9 @@ final class LoginPageViewController: LoginBaseViewController {
     private lazy var passwordField: CommonTextFieldContainer = {
         let passwordField: CommonTextFieldContainer = CommonTextFieldContainer()
         
-        passwordField.textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
-        passwordField.textField.isSecureTextEntry = true
-        passwordField.textField.placeholder = "Password"
+        passwordField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
+        passwordField.isSecureTextEntry = true
+        passwordField.placeholder = "Password"
         
         return passwordField
     }()
@@ -169,7 +169,7 @@ final class LoginPageViewController: LoginBaseViewController {
     
     @objc
     private func onTextFieldChanged() {
-        if !(emailField.textField.text?.isEmpty ?? true) && !(passwordField.textField.text?.isEmpty ?? true) {
+        if !(emailField.text?.isEmpty ?? true) && !(passwordField.text?.isEmpty ?? true) {
             loginButton.isActived(true)
         }
         else {
@@ -189,8 +189,8 @@ final class LoginPageViewController: LoginBaseViewController {
     
     @objc
     private func loginButtonTapped() {
-        viewModel.email = emailField.textField.text ?? ""
-        viewModel.password = passwordField.textField.text ?? ""
+        viewModel.email = emailField.text ?? ""
+        viewModel.password = passwordField.text ?? ""
         
         viewModel.login()
     }
@@ -202,6 +202,6 @@ extension LoginPageViewController: LoginPageViewModelAction {
     }
     
     func login() {
-        
+        coordinator?.finish()
     }
 }

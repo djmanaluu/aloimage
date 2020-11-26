@@ -16,4 +16,8 @@ extension UIColor {
     static var alert: UIColor {
         return UIColor(red: 255.0 / 255.0, green: 214.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
     }
+    
+    static var backgroundSecondary: UIColor {
+        return UIColor(red: 247.0 / 255.0, green: 249.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
+    }
 }
