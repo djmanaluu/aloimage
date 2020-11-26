@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6334E08A256F946E003E765D /* CommonTextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334E089256F946E003E765D /* CommonTextFieldContainer.swift */; };
+		6334E08C256F95D9003E765D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334E08B256F95D9003E765D /* UIColor+Extension.swift */; };
+		6334E08E256F9E8E003E765D /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334E08D256F9E8E003E765D /* CommonButton.swift */; };
 		635C3484256F791000E4F29E /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3483256F791000E4F29E /* NetworkUtil.swift */; };
 		635C3486256F79B600E4F29E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3485256F79B600E4F29E /* Auth.swift */; };
 		635C348A256F7E0700E4F29E /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3489256F7E0700E4F29E /* APIEndPoints.swift */; };
@@ -16,6 +19,9 @@
 		635C3493256F800E00E4F29E /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3492256F800E00E4F29E /* LoginBaseViewController.swift */; };
 		635C3496256F825B00E4F29E /* LoginPageContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3495256F825B00E4F29E /* LoginPageContracts.swift */; };
 		635C3499256F826A00E4F29E /* LoginPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C3498256F826A00E4F29E /* LoginPageResponse.swift */; };
+		635C349B256F886500E4F29E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C349A256F886500E4F29E /* BaseViewController.swift */; };
+		635C349E256F8E4E00E4F29E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C349D256F8E4E00E4F29E /* UIView+Extension.swift */; };
+		635C34A0256F8EA100E4F29E /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C349F256F8EA100E4F29E /* ConstraintMaker.swift */; };
 		637DE234256F448B0059178E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE233256F448B0059178E /* AppDelegate.swift */; };
 		637DE236256F448B0059178E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE235256F448B0059178E /* SceneDelegate.swift */; };
 		637DE23D256F448C0059178E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637DE23C256F448C0059178E /* Assets.xcassets */; };
@@ -44,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6334E089256F946E003E765D /* CommonTextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextFieldContainer.swift; sourceTree = "<group>"; };
+		6334E08B256F95D9003E765D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		6334E08D256F9E8E003E765D /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		635C3483256F791000E4F29E /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
 		635C3485256F79B600E4F29E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		635C3489256F7E0700E4F29E /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
@@ -53,6 +62,9 @@
 		635C3492256F800E00E4F29E /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
 		635C3495256F825B00E4F29E /* LoginPageContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageContracts.swift; sourceTree = "<group>"; };
 		635C3498256F826A00E4F29E /* LoginPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageResponse.swift; sourceTree = "<group>"; };
+		635C349A256F886500E4F29E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		635C349D256F8E4E00E4F29E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		635C349F256F8EA100E4F29E /* ConstraintMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
 		637DE230256F448B0059178E /* Alodokter Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alodokter Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		637DE233256F448B0059178E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637DE235256F448B0059178E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +109,11 @@
 		635C3481256F77CD00E4F29E /* Common Component */ = {
 			isa = PBXGroup;
 			children = (
+				635C34A1256F8EB600E4F29E /* Base */,
 				635C3482256F78FE00E4F29E /* Network */,
+				635C349C256F8E3C00E4F29E /* Util */,
+				6334E08D256F9E8E003E765D /* CommonButton.swift */,
+				6334E089256F946E003E765D /* CommonTextFieldContainer.swift */,
 			);
 			path = "Common Component";
 			sourceTree = "<group>";
@@ -136,6 +152,24 @@
 				635C3498256F826A00E4F29E /* LoginPageResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		635C349C256F8E3C00E4F29E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				635C349F256F8EA100E4F29E /* ConstraintMaker.swift */,
+				635C349D256F8E4E00E4F29E /* UIView+Extension.swift */,
+				6334E08B256F95D9003E765D /* UIColor+Extension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		635C34A1256F8EB600E4F29E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				635C349A256F886500E4F29E /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		637DE227256F448B0059178E = {
@@ -384,8 +418,14 @@
 				635C3484256F791000E4F29E /* NetworkUtil.swift in Sources */,
 				635C3499256F826A00E4F29E /* LoginPageResponse.swift in Sources */,
 				635C3493256F800E00E4F29E /* LoginBaseViewController.swift in Sources */,
+				6334E08C256F95D9003E765D /* UIColor+Extension.swift in Sources */,
+				635C349E256F8E4E00E4F29E /* UIView+Extension.swift in Sources */,
 				635C348C256F7ED400E4F29E /* MainCoordinator.swift in Sources */,
+				635C34A0256F8EA100E4F29E /* ConstraintMaker.swift in Sources */,
+				6334E08A256F946E003E765D /* CommonTextFieldContainer.swift in Sources */,
 				637DE26B256F4A570059178E /* LoginPageViewController.swift in Sources */,
+				6334E08E256F9E8E003E765D /* CommonButton.swift in Sources */,
+				635C349B256F886500E4F29E /* BaseViewController.swift in Sources */,
 				637DE26D256F4A610059178E /* LoginPageViewModel.swift in Sources */,
 				635C3491256F7F4B00E4F29E /* LoginFlowCoordinator.swift in Sources */,
 				635C3496256F825B00E4F29E /* LoginPageContracts.swift in Sources */,
@@ -490,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -544,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -567,7 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "djm.Alodokter-Test-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -584,7 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "djm.Alodokter-Test-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -29,6 +29,8 @@ final class LoginFlowCoordinator: Coordinator {
     func start() {
         let loginPageVC: LoginPageViewController = LoginPageViewController()
         
+        loginPageVC.coordinator = self
         
+        navigationController.setViewControllers([loginPageVC], animated: navigationController.viewControllers.count > 0)
     }
 }

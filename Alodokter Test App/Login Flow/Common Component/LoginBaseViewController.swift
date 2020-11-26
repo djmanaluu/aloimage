@@ -6,8 +6,6 @@
 //  Copyright © 2020 David Jordan Manalu. All rights reserved.
 //
 
-import UIKit
-
-class LoginBaseViewController: UIViewController {
+class LoginBaseViewController: BaseViewController {
     weak var coordinator: LoginFlowCoordinator?
 }
