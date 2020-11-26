@@ -30,6 +30,10 @@
 		637DE256256F448C0059178E /* Alodokter_Test_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE255256F448C0059178E /* Alodokter_Test_AppUITests.swift */; };
 		637DE26B256F4A570059178E /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE26A256F4A570059178E /* LoginPageViewController.swift */; };
 		637DE26D256F4A610059178E /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE26C256F4A610059178E /* LoginPageViewModel.swift */; };
+		63FFDF78256FAF6F00016A00 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF77256FAF6F00016A00 /* RegisterPageViewController.swift */; };
+		63FFDF7A256FAF7A00016A00 /* RegisterPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF79256FAF7A00016A00 /* RegisterPageViewModel.swift */; };
+		63FFDF7C256FAF8200016A00 /* RegisterPageContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF7B256FAF8200016A00 /* RegisterPageContracts.swift */; };
+		63FFDF7F256FAF9900016A00 /* RegisterPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF7E256FAF9900016A00 /* RegisterPageResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		637DE257256F448C0059178E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637DE26A256F4A570059178E /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		637DE26C256F4A610059178E /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
+		63FFDF77256FAF6F00016A00 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		63FFDF79256FAF7A00016A00 /* RegisterPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewModel.swift; sourceTree = "<group>"; };
+		63FFDF7B256FAF8200016A00 /* RegisterPageContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageContracts.swift; sourceTree = "<group>"; };
+		63FFDF7E256FAF9900016A00 /* RegisterPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,8 +289,20 @@
 		637DE269256F4A2C0059178E /* Register Page */ = {
 			isa = PBXGroup;
 			children = (
+				63FFDF7D256FAF8800016A00 /* Response */,
+				63FFDF77256FAF6F00016A00 /* RegisterPageViewController.swift */,
+				63FFDF79256FAF7A00016A00 /* RegisterPageViewModel.swift */,
+				63FFDF7B256FAF8200016A00 /* RegisterPageContracts.swift */,
 			);
 			path = "Register Page";
+			sourceTree = "<group>";
+		};
+		63FFDF7D256FAF8800016A00 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDF7E256FAF9900016A00 /* RegisterPageResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,10 +435,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFDF7F256FAF9900016A00 /* RegisterPageResponse.swift in Sources */,
 				635C3484256F791000E4F29E /* NetworkUtil.swift in Sources */,
 				635C3499256F826A00E4F29E /* LoginPageResponse.swift in Sources */,
 				635C3493256F800E00E4F29E /* LoginBaseViewController.swift in Sources */,
 				6334E08C256F95D9003E765D /* UIColor+Extension.swift in Sources */,
+				63FFDF7A256FAF7A00016A00 /* RegisterPageViewModel.swift in Sources */,
+				63FFDF78256FAF6F00016A00 /* RegisterPageViewController.swift in Sources */,
 				635C349E256F8E4E00E4F29E /* UIView+Extension.swift in Sources */,
 				635C348C256F7ED400E4F29E /* MainCoordinator.swift in Sources */,
 				635C34A0256F8EA100E4F29E /* ConstraintMaker.swift in Sources */,
@@ -426,6 +449,7 @@
 				637DE26B256F4A570059178E /* LoginPageViewController.swift in Sources */,
 				6334E08E256F9E8E003E765D /* CommonButton.swift in Sources */,
 				635C349B256F886500E4F29E /* BaseViewController.swift in Sources */,
+				63FFDF7C256FAF8200016A00 /* RegisterPageContracts.swift in Sources */,
 				637DE26D256F4A610059178E /* LoginPageViewModel.swift in Sources */,
 				635C3491256F7F4B00E4F29E /* LoginFlowCoordinator.swift in Sources */,
 				635C3496256F825B00E4F29E /* LoginPageContracts.swift in Sources */,

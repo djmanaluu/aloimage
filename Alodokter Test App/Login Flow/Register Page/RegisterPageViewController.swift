@@ -1,5 +1,5 @@
 //
-//  LoginPageViewController.swift
+//  RegisterPageViewController.swift
 //  Alodokter Test App
 //
 //  Created by David Jordan Manalu on 26/11/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoginPageViewController: LoginBaseViewController {
+final class RegisterPageViewController: LoginBaseViewController {
     // MARK: - Properties
     
     private lazy var emailField: CommonTextFieldContainer = {
@@ -30,10 +30,20 @@ final class LoginPageViewController: LoginBaseViewController {
         return passwordField
     }()
     
-    lazy var loginButton: CommonButton = {
+    private lazy var reenterPasswordField: CommonTextFieldContainer = {
+        let reenterPasswordField: CommonTextFieldContainer = CommonTextFieldContainer()
+        
+        reenterPasswordField.textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
+        reenterPasswordField.textField.isSecureTextEntry = true
+        reenterPasswordField.textField.placeholder = "Reenter Password"
+        
+        return reenterPasswordField
+    }()
+    
+    lazy var registerButton: CommonButton = {
         let loginButton: CommonButton = CommonButton(isButtonActived: false)
         
-        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitle("Register", for: .normal)
         
         return loginButton
     }()
@@ -46,26 +56,12 @@ final class LoginPageViewController: LoginBaseViewController {
         setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
     // MARK: - Private Methods
     
     private func setupView() {
         let container: UIView = UIView()
         let logoImageView: UIImageView = UIImageView(image: UIImage(named: "aloimage-logo"))
         let titleLabel: UILabel = UILabel()
-        let dontHaveAccountLabel: UILabel = UILabel()
-        let registerButton: UIButton = UIButton()
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
         
         view.addGestureRecognizer(tapGesture)
@@ -73,23 +69,13 @@ final class LoginPageViewController: LoginBaseViewController {
         titleLabel.font = .boldSystemFont(ofSize: 22.0)
         titleLabel.text = "aloimage"
         
-        dontHaveAccountLabel.font = .systemFont(ofSize: 12.0)
-        dontHaveAccountLabel.text = "Don't have account? Let's join us!!"
-        dontHaveAccountLabel.textAlignment = .center
-        
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
-        registerButton.titleLabel?.font = .systemFont(ofSize: 14.0)
-        registerButton.setTitle("Register Here!!!", for: .normal)
-        registerButton.setTitleColor(.themePrimary, for: .normal)
-        
         view.addSubview(container)
         
         container.addSubview(logoImageView)
         container.addSubview(titleLabel)
         container.addSubview(emailField)
         container.addSubview(passwordField)
-        container.addSubview(loginButton)
-        container.addSubview(dontHaveAccountLabel)
+        container.addSubview(reenterPasswordField)
         container.addSubview(registerButton)
         
         container.makeConstraint { make in
@@ -119,20 +105,14 @@ final class LoginPageViewController: LoginBaseViewController {
             make.right.equalTo(container, constant: -16.0)
         }
         
-        loginButton.makeConstraint { make in
+        reenterPasswordField.makeConstraint { make in
             make.top.equalTo(passwordField, position: .bottom, constant: 16.0)
             make.left.equalTo(container, constant: 16.0)
             make.right.equalTo(container, constant: -16.0)
         }
         
-        dontHaveAccountLabel.makeConstraint { make in
-            make.top.equalTo(loginButton, position: .bottom, constant: 12.0)
-            make.left.equalTo(container, constant: 16.0)
-            make.right.equalTo(container, constant: -16.0)
-        }
-        
         registerButton.makeConstraint { make in
-            make.top.equalTo(dontHaveAccountLabel, position: .bottom, constant: 4.0)
+            make.top.equalTo(reenterPasswordField, position: .bottom, constant: 16.0)
             make.bottom.equalTo(container)
             make.left.equalTo(container, constant: 16.0)
             make.right.equalTo(container, constant: -16.0)
@@ -143,11 +123,13 @@ final class LoginPageViewController: LoginBaseViewController {
     
     @objc
     private func onTextFieldChanged() {
-        if !(emailField.textField.text?.isEmpty ?? true) && !(passwordField.textField.text?.isEmpty ?? true) {
-            loginButton.isActived(true)
+        let isPasswordMatch: Bool = !(passwordField.textField.text?.isEmpty ?? true) && passwordField.textField.text == reenterPasswordField.textField.text
+        
+        if !(emailField.textField.text?.isEmpty ?? true) && isPasswordMatch {
+            registerButton.isActived(true)
         }
         else {
-            loginButton.isActived(false)
+            registerButton.isActived(false)
         }
     }
     
@@ -158,6 +140,6 @@ final class LoginPageViewController: LoginBaseViewController {
     
     @objc
     private func registerButtonTapped() {
-        coordinator?.navigateToRegisterPage()
+        
     }
 }

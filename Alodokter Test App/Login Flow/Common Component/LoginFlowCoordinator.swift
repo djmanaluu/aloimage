@@ -33,4 +33,12 @@ final class LoginFlowCoordinator: Coordinator {
         
         navigationController.setViewControllers([loginPageVC], animated: navigationController.viewControllers.count > 0)
     }
+    
+    func navigateToRegisterPage() {
+        let registerPageVC: RegisterPageViewController = RegisterPageViewController()
+        
+        registerPageVC.coordinator = self
+        
+        navigationController.pushViewController(registerPageVC, animated: true)
+    }
 }
