@@ -35,7 +35,7 @@ final class LoginFlowCoordinator: Coordinator {
     }
     
     func navigateToRegisterPage() {
-        let registerPageVC: RegisterPageViewController = RegisterPageViewController()
+        let registerPageVC: RegisterPageViewController = RegisterPageViewController.constructController()
         
         registerPageVC.coordinator = self
         

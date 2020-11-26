@@ -16,13 +16,13 @@ final class LoadingAnimationView: UIView {
     // MARK: - Properties
     
     private lazy var leftLoadingCircleView: LoadingCircleView = {
-        let leftLoadingCircleView: LoadingCircleView = LoadingCircleView(color: .red)
+        let leftLoadingCircleView: LoadingCircleView = LoadingCircleView(color: .themePrimary)
         
         return leftLoadingCircleView
     }()
     
     private lazy var middleLoadingCircleView: LoadingCircleView = {
-        let middleLoadingCircleView: LoadingCircleView = LoadingCircleView(color: .yellow)
+        let middleLoadingCircleView: LoadingCircleView = LoadingCircleView(color: .themePrimary)
         
         return middleLoadingCircleView
     }()

@@ -21,6 +21,8 @@ final class RegisterPageViewModelDependency {
 final class RegisterPageViewModel {
     // MARK: - Properties
     
+    weak var action: (BaseViewModelAction & RegisterPageViewModelAction)?
+    
     var email: String = ""
     var password: String = ""
     var reenterPassword: String = ""
@@ -36,6 +38,28 @@ final class RegisterPageViewModel {
     // MARK: - Public Methods
     
     func onRegisterButtonTapped() {
+        guard password == reenterPassword else {
+            action?.hideLoadingView()
+            action?.showBanner(text: "Password and Reenter Password is not match")
+            
+            return
+        }
         
+        action?.showLoadingView()
+        
+        let parameters: [String: String] = [
+            "email": email,
+            "password": password
+        ]
+        
+        dependency.fetcher.requestAPI(parameters: parameters, onSuccess: { [weak self] response in
+            self?.action?.hideLoadingView()
+            self?.action?.onRegisterFinish()
+        }) { [weak self] error in
+            self?.action?.hideLoadingView()
+            self?.action?.showNetworkError { [weak self] in
+                self?.onRegisterButtonTapped()
+            }
+        }
     }
 }

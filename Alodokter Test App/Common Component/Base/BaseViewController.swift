@@ -11,6 +11,21 @@ import UIKit
 class BaseViewController: UIViewController {
     // MARK: - View Life Cycle
     
+    var loadingView: LoadingStateView = LoadingStateView()
+    
+    var errorView: ErrorStateView = ErrorStateView()
+    
+    lazy var backButton: UIBarButtonItem = {
+        let backButton: UIButton = UIButton(frame: CGRect(x: 0.0, y: 0.0, width: 24.0, height: 24.0))
+
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        backButton.contentHorizontalAlignment = .left
+        backButton.imageView?.contentMode = .scaleAspectFit
+        backButton.setImage(UIImage(named: "ic-left-chevron"), for: .normal)
+
+        return UIBarButtonItem(customView: backButton)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +33,8 @@ class BaseViewController: UIViewController {
         edgesForExtendedLayout = .all
         extendedLayoutIncludesOpaqueBars = false
         navigationItem.largeTitleDisplayMode = .never
+        
+        showBackButton(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +44,19 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     }
+    
+    // MARK: - Public Methods
+    
+    func showBackButton(_ show: Bool) {
+        navigationItem.leftBarButtonItem = show ? backButton : nil
+    }
+    
+    // MARK: - Button's Actions
+    
+    @objc
+    func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension BaseViewController: BaseViewModelAction {
@@ -35,8 +65,8 @@ extension BaseViewController: BaseViewModelAction {
         
         view.addSubview(loadingView)
         
-        loadingView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+        loadingView.makeConstraints { make in
+            make.edge.equalTo(view)
         }
     }
     
@@ -49,16 +79,12 @@ extension BaseViewController: BaseViewModelAction {
                        description: String,
                        retryButtonLabel: String,
                        retryButtonAction: @escaping () -> Void) {
-        errorView.configureErrorView(imageName: imageName,
-                                     description: description,
-                                     retryButtonLabel: retryButtonLabel,
-                                     retryButtonAction: retryButtonAction)
+        errorView.configureErrorView(retryButtonAction: retryButtonAction)
         
         view.addSubview(errorView)
         
-        errorView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            make.bottom.equalTo(view)
+        errorView.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(view)
         }
     }
     
@@ -73,8 +99,8 @@ extension BaseViewController: BaseViewModelAction {
         
         view.addSubview(errorView)
         
-        errorView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
+        errorView.makeConstraints { make in
+            make.top.left.right.equalTo(view)
             make.bottom.equalTo(view)
         }
     }

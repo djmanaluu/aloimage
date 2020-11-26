@@ -40,13 +40,16 @@ final class RegisterPageViewController: LoginBaseViewController {
         return reenterPasswordField
     }()
     
-    lazy var registerButton: CommonButton = {
-        let loginButton: CommonButton = CommonButton(isButtonActived: false)
+    private lazy var registerButton: CommonButton = {
+        let registerButton: CommonButton = CommonButton(isButtonActived: false)
         
-        loginButton.setTitle("Register", for: .normal)
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        registerButton.setTitle("Register", for: .normal)
         
-        return loginButton
+        return registerButton
     }()
+    
+    private let viewModel: RegisterPageViewModel
     
     // MARK: - View Life Cycle
     
@@ -54,6 +57,29 @@ final class RegisterPageViewController: LoginBaseViewController {
         super.viewDidLoad()
         
         setupView()
+    }
+    
+    // MARK: - Init
+    
+    init(viewModel: RegisterPageViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        self.viewModel.action = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Static Methods
+    
+    static func constructController() -> RegisterPageViewController {
+        let viewModel: RegisterPageViewModel = RegisterPageViewModel(dependency: RegisterPageViewModelDependency())
+        let viewController: RegisterPageViewController = RegisterPageViewController(viewModel: viewModel)
+        
+        return viewController
     }
     
     // MARK: - Private Methods
@@ -123,9 +149,9 @@ final class RegisterPageViewController: LoginBaseViewController {
     
     @objc
     private func onTextFieldChanged() {
-        let isPasswordMatch: Bool = !(passwordField.textField.text?.isEmpty ?? true) && passwordField.textField.text == reenterPasswordField.textField.text
-        
-        if !(emailField.textField.text?.isEmpty ?? true) && isPasswordMatch {
+        if !(emailField.textField.text?.isEmpty ?? true) &&
+            !(passwordField.textField.text?.isEmpty ?? true) &&
+            !(reenterPasswordField.textField.text?.isEmpty ?? true) {
             registerButton.isActived(true)
         }
         else {
@@ -140,6 +166,20 @@ final class RegisterPageViewController: LoginBaseViewController {
     
     @objc
     private func registerButtonTapped() {
+        viewModel.email = emailField.textField.text ?? ""
+        viewModel.password = passwordField.textField.text ?? ""
+        viewModel.reenterPassword = reenterPasswordField.textField.text ?? ""
         
+        viewModel.onRegisterButtonTapped()
+    }
+}
+
+extension RegisterPageViewController: RegisterPageViewModelAction {
+    func showBanner(text: String) {
+        BannerView.showBannerView(on: self, text: text, buttonLabel: "Okay", duration: 10.0, action: nil)
+    }
+    
+    func onRegisterFinish() {
+        navigationController?.popViewController(animated: true)
     }
 }
