@@ -6,8 +6,7 @@
 //  Copyright © 2020 David Jordan Manalu. All rights reserved.
 //
 
-//private let host: String = "http://aloimage-api.herokuapp.com"
-private let host: String = "http://localhost:8080"
+private let host: String = "http://aloimage-api.herokuapp.com"
 
 enum APIEndPoints: String {
     case login = "/api/users/login"
