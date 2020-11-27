@@ -25,7 +25,6 @@ final class ProfileViewModel {
     
     weak var action: (BaseViewModelAction & ProfileContracts)?
     
-    var profileImageData: Data?
     var name: String = ""
     var gender: String = ""
     var phoneNumber: String = ""
@@ -43,19 +42,14 @@ final class ProfileViewModel {
     func getProfile() {
         action?.showLoadingView()
         
-        let parameters: [String: String] = [
-            "userID": Auth.userID ?? "",
-        ]
-        
-        dependency.fetcher.getProfile(parameters: parameters, onSuccess: { [weak self] (response) in
-            self?.profileImageData = Data(response.profileImageData.utf8)
+        dependency.fetcher.getProfile(userID: Auth.userID ?? "", onSuccess: { [weak self] (response) in
             self?.name = response.name
             self?.gender = response.gender
             self?.phoneNumber = response.phoneNumber
             
             self?.action?.hideLoadingView()
             self?.action?.configureProfilePage()
-        }) { [weak self] _ in
+        }) { [weak self] error in
             self?.action?.hideLoadingView()
             self?.action?.showNetworkError { [weak self] in
                 self?.getProfile()
@@ -66,20 +60,11 @@ final class ProfileViewModel {
     func updateProfile() {
         action?.showLoadingView()
         
-        let imageDataString: String
-        
-        if let profileImageData: Data = profileImageData {
-            imageDataString = String(decoding: profileImageData, as: UTF8.self)
-        }
-        else {
-            imageDataString = ""
-        }
-        
         let parameters: [String: String] = [
-            "profileImageData": imageDataString,
             "name": name,
             "gender": gender,
-            "phoneNumber": phoneNumber
+            "phoneNumber": phoneNumber,
+            "userID": Auth.userID ?? ""
         ]
         
         dependency.fetcher.postProfile(parameters: parameters, onSuccess: { [weak self] response in
@@ -89,6 +74,20 @@ final class ProfileViewModel {
             self?.action?.hideLoadingView()
             self?.action?.showNetworkError { [weak self] in
                 self?.updateProfile()
+            }
+        }
+    }
+    
+    func logout(didFinish: @escaping () -> Void) {
+        action?.showLoadingView()
+        
+        dependency.fetcher.postLogut(userID: Auth.userID ?? "", onSuccess: { [weak self] _ in
+            self?.action?.hideLoadingView()
+            didFinish()
+        }) { [weak self] error in
+            self?.action?.hideLoadingView()
+            self?.action?.showNetworkError {
+                self?.logout(didFinish: didFinish)
             }
         }
     }

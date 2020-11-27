@@ -69,12 +69,24 @@ final class ProfileViewController: TabbarBaseViewController {
     private var selectedgenderValue: String?
     private let viewModel: ProfileViewModel
     
+    // MARK: - View Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupView()
+        
+        viewModel.getProfile()
+    }
+    
     // MARK: - Init
     
     init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
+        
+        self.viewModel.action = self
     }
     
     required init?(coder: NSCoder) {
@@ -88,16 +100,6 @@ final class ProfileViewController: TabbarBaseViewController {
         let viewController: ProfileViewController = ProfileViewController(viewModel: viewModel)
         
         return viewController
-    }
-    
-    // MARK: - View Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        viewModel.getProfile()
-        
-        setupView()
     }
     
     // MARK: - Private Methods
@@ -256,8 +258,7 @@ final class ProfileViewController: TabbarBaseViewController {
                 !newGender.isEmpty &&
                 !newPhoneNumber.isEmpty
         let isProfilesValuesIsChanged: Bool =
-            newImageData != viewModel.profileImageData ||
-                newName != viewModel.name ||
+            newName != viewModel.name ||
                 newGender != viewModel.gender ||
                 newPhoneNumber != viewModel.phoneNumber
         
@@ -266,7 +267,11 @@ final class ProfileViewController: TabbarBaseViewController {
     
     @objc
     private func logout() {
-        coordinator?.logout()
+        viewModel.logout { [weak self] in
+            ProfileImage.remove()
+            
+            self?.coordinator?.logout()
+        }
     }
 }
 
@@ -294,6 +299,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image: UIImage = info[.originalImage] as? UIImage {
             profilePicture.image = image
+            ProfileImage.save(image: image)
         }
         
         onProfileValuesChanged()
@@ -304,16 +310,13 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 
 extension ProfileViewController: ProfileContracts {
     func configureProfilePage() {
-        if let profileImageData: Data = viewModel.profileImageData {
-            profilePicture.image = UIImage(data: profileImageData)
-        }
-        else {
-            profilePicture.image = UIImage(named: "ic-default-pp")
-        }
-        
         nameTextField.text = viewModel.name
         genderTextField.text = viewModel.gender
         phoneNumberTextField.text = viewModel.phoneNumber
+        
+        if let image: UIImage = ProfileImage.getImage() {
+            profilePicture.image = image
+        }
     }
     
     func showBanner(text: String) {

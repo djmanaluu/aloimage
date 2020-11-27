@@ -11,6 +11,7 @@ private let host: String = "http://localhost:8080"
 
 enum APIEndPoints: String {
     case login = "/api/users/login"
+    case logout = "/api/users/logout"
     case register = "/api/users/register"
     
     case getContents = "/api/contents"

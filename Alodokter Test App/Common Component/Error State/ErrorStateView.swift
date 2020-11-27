@@ -66,7 +66,7 @@ final class ErrorStateView: UIView {
         
         backgroundColor = .white
         
-        imageView.image = UIImage(named: "network-issue")
+        imageView.image = UIImage(named: "ic-network-issue")
         
         descriptionLabel.text = "We are sorry, there is a Network Issue :("
         

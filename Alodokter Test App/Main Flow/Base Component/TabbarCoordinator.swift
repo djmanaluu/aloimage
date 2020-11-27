@@ -74,6 +74,14 @@ final class TabbarCoordinator: NSObject, Coordinator {
         tabbarController.selectedIndex = page.tabbarIndex()
     }
     
+    func navigateToContentDetailPage(album: [ImageContent]) {
+        let viewController = ContentDetailViewController()
+        
+        viewController.configure(album: album)
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
     func logout() {
         Auth.token = nil
         finish()
