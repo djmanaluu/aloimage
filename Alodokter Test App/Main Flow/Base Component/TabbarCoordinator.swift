@@ -74,12 +74,12 @@ final class TabbarCoordinator: NSObject, Coordinator {
         tabbarController.selectedIndex = page.tabbarIndex()
     }
     
-    func navigateToContentDetailPage(album: [ImageContent]) {
+    func navigateToContentDetailPage(album: [ImageContent], parentVC vc: UIViewController) {
         let viewController = ContentDetailViewController()
         
         viewController.configure(album: album)
         
-        navigationController.pushViewController(viewController, animated: true)
+        vc.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func logout() {
@@ -94,7 +94,7 @@ final class TabbarCoordinator: NSObject, Coordinator {
         tabbarController.selectedIndex = TabbarPage.home.tabbarIndex()
         tabbarController.tabBar.isTranslucent = false
         
-        navigationController.setNavigationBarHidden(false, animated: true)
+        navigationController.setNavigationBarHidden(true, animated: true)
         navigationController.viewControllers = [tabbarController]
     }
     

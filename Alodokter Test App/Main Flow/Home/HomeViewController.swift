@@ -102,7 +102,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let album: [ImageContent] = viewModel.response?.imageAlbums[indexPath.row] {
-            coordinator?.navigateToContentDetailPage(album: album)
+            coordinator?.navigateToContentDetailPage(album: album, parentVC: self)
         }
     }
     
