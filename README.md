@@ -12,7 +12,7 @@ Here's the Repo of the API:
 
 ## Design Patter
 
-I use MVVM + Coordinator
+I used MVVM + Coordinator
 
 ## Unit Testing
 
