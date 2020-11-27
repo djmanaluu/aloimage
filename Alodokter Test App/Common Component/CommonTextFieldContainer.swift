@@ -22,8 +22,8 @@ final class CommonTextFieldContainer: UITextField {
     // MARK: - Private Methods
     
     private func setupView() {
-        let leftView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 16.0))
-        let rightView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 16.0))
+        let leftView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 8.0, height: 16.0))
+        let rightView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 8.0, height: 16.0))
         
         layer.borderColor = UIColor.themePrimary.cgColor
         layer.borderWidth = 2.0

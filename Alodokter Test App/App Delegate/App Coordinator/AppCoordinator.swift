@@ -31,7 +31,7 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         childCoordinators = []
-        Auth.isTokenAvailable ? openHomeFlow() : openLogInFlow()
+        Auth.isTokenAvailable ? openMainFlow() : openLogInFlow()
     }
     
     func openLogInFlow() {

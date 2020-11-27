@@ -39,5 +39,9 @@ final class CommonButton: UIButton {
         layer.cornerRadius = 10.0
         
         titleLabel?.font = .systemFont(ofSize: 16.0)
+        
+        makeConstraints { make in
+            make.height.equalToConstant(36.0)
+        }
     }
 }

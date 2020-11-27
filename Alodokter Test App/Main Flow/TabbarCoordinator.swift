@@ -99,7 +99,7 @@ final class TabbarCoordinator: NSObject, Coordinator {
             
             break
         case .profile:
-            let viewController: ProfileViewController = ProfileViewController()
+            let viewController: ProfileViewController = ProfileViewController.constructController()
             
             navigationController.pushViewController(viewController, animated: true)
             

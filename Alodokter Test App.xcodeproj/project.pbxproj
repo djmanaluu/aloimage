@@ -24,7 +24,6 @@
 		635C34A0256F8EA100E4F29E /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C349F256F8EA100E4F29E /* ConstraintMaker.swift */; };
 		637DE234256F448B0059178E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE233256F448B0059178E /* AppDelegate.swift */; };
 		637DE236256F448B0059178E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE235256F448B0059178E /* SceneDelegate.swift */; };
-		637DE23D256F448C0059178E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637DE23C256F448C0059178E /* Assets.xcassets */; };
 		637DE240256F448C0059178E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637DE23E256F448C0059178E /* LaunchScreen.storyboard */; };
 		637DE24B256F448C0059178E /* Alodokter_Test_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE24A256F448C0059178E /* Alodokter_Test_AppTests.swift */; };
 		637DE256256F448C0059178E /* Alodokter_Test_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE255256F448C0059178E /* Alodokter_Test_AppUITests.swift */; };
@@ -43,6 +42,10 @@
 		63FFDF91256FEFCB00016A00 /* TabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF90256FEFCB00016A00 /* TabbarCoordinator.swift */; };
 		63FFDF93256FF4B000016A00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF92256FF4B000016A00 /* HomeViewController.swift */; };
 		63FFDF96256FF4D500016A00 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF95256FF4D500016A00 /* ProfileViewController.swift */; };
+		63FFDF9A2570158E00016A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FFDF992570158E00016A00 /* Assets.xcassets */; };
+		63FFDF9C25701B0D00016A00 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF9B25701B0D00016A00 /* ProfileViewModel.swift */; };
+		63FFDF9F25701B9900016A00 /* GetProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF9E25701B9900016A00 /* GetProfileResponse.swift */; };
+		63FFDFA12570203300016A00 /* ProfileContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFA02570203300016A00 /* ProfileContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +84,6 @@
 		637DE230256F448B0059178E /* Alodokter Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alodokter Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		637DE233256F448B0059178E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637DE235256F448B0059178E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		637DE23C256F448C0059178E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		637DE23F256F448C0059178E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		637DE241256F448C0059178E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637DE246256F448C0059178E /* Alodokter Test AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alodokter Test AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,10 @@
 		63FFDF90256FEFCB00016A00 /* TabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinator.swift; sourceTree = "<group>"; };
 		63FFDF92256FF4B000016A00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63FFDF95256FF4D500016A00 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		63FFDF992570158E00016A00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63FFDF9B25701B0D00016A00 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		63FFDF9E25701B9900016A00 /* GetProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileResponse.swift; sourceTree = "<group>"; };
+		63FFDFA02570203300016A00 /* ProfileContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,8 +297,8 @@
 		637DE267256F4A020059178E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				637DE23C256F448C0059178E /* Assets.xcassets */,
 				637DE23E256F448C0059178E /* LaunchScreen.storyboard */,
+				63FFDF992570158E00016A00 /* Assets.xcassets */,
 				637DE241256F448C0059178E /* Info.plist */,
 			);
 			path = Assets;
@@ -367,9 +373,20 @@
 		63FFDF94256FF4C500016A00 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				63FFDF9D25701B8800016A00 /* Response */,
 				63FFDF95256FF4D500016A00 /* ProfileViewController.swift */,
+				63FFDF9B25701B0D00016A00 /* ProfileViewModel.swift */,
+				63FFDFA02570203300016A00 /* ProfileContracts.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		63FFDF9D25701B8800016A00 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDF9E25701B9900016A00 /* GetProfileResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,8 +493,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFDF9A2570158E00016A00 /* Assets.xcassets in Resources */,
 				637DE240256F448C0059178E /* LaunchScreen.storyboard in Resources */,
-				637DE23D256F448C0059178E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFDF9F25701B9900016A00 /* GetProfileResponse.swift in Sources */,
 				63FFDF7F256FAF9900016A00 /* RegisterPageResponse.swift in Sources */,
 				63FFDF88256FB95000016A00 /* BaseViewModelAction.swift in Sources */,
 				63FFDF93256FF4B000016A00 /* HomeViewController.swift in Sources */,
@@ -520,6 +538,7 @@
 				63FFDF8E256FB9B100016A00 /* LoadingStateView.swift in Sources */,
 				637DE26B256F4A570059178E /* LoginPageViewController.swift in Sources */,
 				6334E08E256F9E8E003E765D /* CommonButton.swift in Sources */,
+				63FFDF9C25701B0D00016A00 /* ProfileViewModel.swift in Sources */,
 				635C349B256F886500E4F29E /* BaseViewController.swift in Sources */,
 				63FFDF7C256FAF8200016A00 /* RegisterPageContracts.swift in Sources */,
 				637DE26D256F4A610059178E /* LoginPageViewModel.swift in Sources */,
@@ -528,6 +547,7 @@
 				635C348A256F7E0700E4F29E /* APIEndPoints.swift in Sources */,
 				63FFDF86256FB79C00016A00 /* ErrorStateView.swift in Sources */,
 				637DE234256F448B0059178E /* AppDelegate.swift in Sources */,
+				63FFDFA12570203300016A00 /* ProfileContracts.swift in Sources */,
 				63FFDF8A256FB98300016A00 /* LoadingCircleView.swift in Sources */,
 				63FFDF82256FB1E900016A00 /* BannerView.swift in Sources */,
 				637DE236256F448B0059178E /* SceneDelegate.swift in Sources */,
@@ -699,6 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FCCGZG9V5;
 				INFOPLIST_FILE = "Alodokter Test App/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -716,6 +737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FCCGZG9V5;
 				INFOPLIST_FILE = "Alodokter Test App/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

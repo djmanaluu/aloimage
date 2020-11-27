@@ -21,6 +21,7 @@ final class LoginPageResponse: Codable {
         NetworkUtil.request(from: APIEndPoints.login.urlString,
                             responseType: self,
                             httpMethod: .post,
+                            header: header,
                             parameters: nil,
                             httpStatusCodeHandler: httpStatusCodeHandler,
                             onSuccess: onSuccess,

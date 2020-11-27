@@ -57,13 +57,15 @@ final class LoginPageViewModel {
             }
             
             return false
+            
             }, onSuccess: { [weak self] response in
                 self?.action?.hideLoadingView()
                 
                 Auth.token = response.token
+                Auth.userID = response.userID
                 
                 self?.action?.login()
-        }) { [weak self] error in
+        }) { [weak self] _ in
             self?.action?.hideLoadingView()
             self?.action?.showNetworkError { [weak self] in
                 self?.login()
