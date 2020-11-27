@@ -8,7 +8,7 @@ Here's the Repo of the API:
 **https://github.com/djmanaluu/aloimage-api**
 
 
-<img src="images/API%20Repo.png" width="400"> </img>
+<img src="images/Repo.png" width="400"> </img>
 
 ## Design Patter
 
