@@ -57,17 +57,33 @@ final class ProfileViewController: TabbarBaseViewController {
         
         notificationLabel.font = .systemFont(ofSize: 12.0)
         notificationLabel.numberOfLines = 0
-        notificationLabel.text = "* Please make sure that you fill in all the fields and Profile Picture. Update button will available if there's any changes from any field and all fields are filled."
+        notificationLabel.text = "* Please make sure that you fill in all the fields. Update button will available if there's any changes from any field and all fields are filled."
         notificationLabel.textColor = .red
         
         return notificationLabel
     }()
     
+    private lazy var pickerView: UIPickerView = {
+        let pickerView: UIPickerView = UIPickerView()
+        
+        pickerView.delegate = self
+        
+        return pickerView
+    }()
+    
     private lazy var updateButton: CommonButton = CommonButton(isButtonActived: false)
     
-    private let genderValue: [String] = ["Male", "Female"]
+    private let genderValues: [String] = ["Male", "Female"]
     private var selectedgenderValue: String?
     private let viewModel: ProfileViewModel
+    
+    private var isGenderTextFieldEmpty: Bool {
+        return genderTextField.text?.isEmpty ?? true
+    }
+    
+    private var shownGenderListValues: [String] {
+        return isGenderTextFieldEmpty ? ["Select your gender"] + genderValues : genderValues
+    }
     
     // MARK: - View Life Cycle
     
@@ -195,9 +211,6 @@ final class ProfileViewController: TabbarBaseViewController {
     }
     
     private func createPickerView() {
-        let pickerView: UIPickerView = UIPickerView()
-        
-        pickerView.delegate = self
         genderTextField.inputView = pickerView
     }
     
@@ -247,13 +260,11 @@ final class ProfileViewController: TabbarBaseViewController {
     
     @objc
     private func onProfileValuesChanged() {
-        let newImageData: Data? = profilePicture.image?.pngData()
         let newName: String = nameTextField.text ?? ""
         let newGender: String = genderTextField.text ?? ""
         let newPhoneNumber: String = phoneNumberTextField.text ?? ""
         
         let isProfileValuesNotEmpty: Bool =
-            newImageData != nil &&
                 !newName.isEmpty &&
                 !newGender.isEmpty &&
                 !newPhoneNumber.isEmpty
@@ -281,17 +292,19 @@ extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource, U
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return genderValue.count
+        return shownGenderListValues.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genderValue[row]
+        return shownGenderListValues[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedgenderValue = genderValue[row]
+        selectedgenderValue = shownGenderListValues[row]
         genderTextField.text = selectedgenderValue
         onProfileValuesChanged()
+        
+        setupPickerView()
     }
 }
 
@@ -321,5 +334,17 @@ extension ProfileViewController: ProfileViewModelAction {
     
     func showBanner(text: String) {
         BannerView.showBannerView(on: self, text: text, buttonLabel: "Okay", duration: 5.0, action: nil)
+        onProfileValuesChanged()
+    }
+    
+    func setupPickerView() {
+        pickerView.reloadAllComponents()
+        
+        for (index, genderValue) in genderValues.enumerated() {
+            if genderValue == genderTextField.text {
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+                return
+            }
+        }
     }
 }

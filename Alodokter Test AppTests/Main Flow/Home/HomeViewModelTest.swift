@@ -43,7 +43,7 @@ final class HomeViewModelTest: XCTestCase {
         
         viewModel.loadContents()
         
-        // Expectation: Should call configureHome action
+        // Expectation: Should call show error view
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertFalse(actionMock.isConfigureHomeCalled)

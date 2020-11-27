@@ -48,6 +48,7 @@ final class ProfileViewModelActionMock: BaseViewModelAction, ProfileViewModelAct
     var isLoginCalled: Bool = false
     var isConfigureProfilePageCalled: Bool = false
     var isShowBannerCalled: Bool = false
+    var isSetupPickerViewCalled: Bool = false
     
     func showLoadingView() {
         isShowLoadingViewCalled = true
@@ -79,6 +80,10 @@ final class ProfileViewModelActionMock: BaseViewModelAction, ProfileViewModelAct
     
     func showBanner(text: String) {
         isShowBannerCalled = true
+    }
+    
+    func setupPickerView() {
+        isSetupPickerViewCalled = true
     }
 }
 

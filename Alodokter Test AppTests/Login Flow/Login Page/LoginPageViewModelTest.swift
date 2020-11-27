@@ -44,7 +44,7 @@ final class LoginPageViewModelTest: XCTestCase {
         
         viewModel.login()
         
-        // Expectation: Should call login
+        // Expectation: Should call login action
         
         XCTAssertFalse(actionMock.isHandleUnauthorizedCalled)
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
@@ -63,7 +63,7 @@ final class LoginPageViewModelTest: XCTestCase {
         
         viewModel.login()
         
-        // Expectation: Should call login
+        // Expectation: Should call show error view
         
         XCTAssertFalse(actionMock.isHandleUnauthorizedCalled)
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)

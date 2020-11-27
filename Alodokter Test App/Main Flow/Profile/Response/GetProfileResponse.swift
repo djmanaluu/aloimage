@@ -33,12 +33,12 @@ final class PostProfileResponse: Codable {
     static func postProfile(parameters: [String: String],
                             onSuccess: @escaping (PostProfileResponse) -> Void,
                             onFailure: @escaping (Error) -> Void) {
-        NetworkUtil.request(from: APIEndPoints.userProfile.urlString,
-                            responseType: PostProfileResponse.self,
-                            httpMethod: .post,
-                            parameters: parameters,
-                            onSuccess: onSuccess,
-                            onFailure: onFailure)
+        NetworkUtil.requestWithToken(from: APIEndPoints.userProfile.urlString,
+                                     responseType: PostProfileResponse.self,
+                                     httpMethod: .post,
+                                     parameters: parameters,
+                                     onSuccess: onSuccess,
+                                     onFailure: onFailure)
     }
 }
 

@@ -29,6 +29,7 @@ final class ProfileViewModelTest: XCTestCase {
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertTrue(actionMock.isConfigureProfilePageCalled)
+        XCTAssertTrue(actionMock.isSetupPickerViewCalled)
         XCTAssertFalse(actionMock.isShowErrorViewCalled)
         
         
@@ -47,6 +48,7 @@ final class ProfileViewModelTest: XCTestCase {
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertFalse(actionMock.isConfigureProfilePageCalled)
+        XCTAssertFalse(actionMock.isSetupPickerViewCalled)
         XCTAssertTrue(actionMock.isShowErrorViewCalled)
     }
     
@@ -61,7 +63,7 @@ final class ProfileViewModelTest: XCTestCase {
         
         viewModel.updateProfile()
         
-        // Expectation: Should call login
+        // Expectation: Should call show banner
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertTrue(actionMock.isShowBannerCalled)
@@ -79,7 +81,7 @@ final class ProfileViewModelTest: XCTestCase {
         
         viewModel.updateProfile()
         
-        // Expectation: Should call login
+        // Expectation: Should call show error view
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertFalse(actionMock.isShowBannerCalled)
@@ -101,7 +103,7 @@ final class ProfileViewModelTest: XCTestCase {
             expectationText = "A"
         }
         
-        // Expectation: Should call login
+        // Expectation: Should call block that set on logout method
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertEqual(expectationText, "A")
@@ -121,7 +123,7 @@ final class ProfileViewModelTest: XCTestCase {
             expectationText = "B"
         }
         
-        // Expectation: Should call login
+        // Expectation: Should not call block that set on logout method and call show error view
         
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)
         XCTAssertNotEqual(expectationText, "B")

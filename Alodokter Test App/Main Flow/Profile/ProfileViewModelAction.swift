@@ -9,4 +9,5 @@
 protocol ProfileViewModelAction: AnyObject {
     func configureProfilePage()
     func showBanner(text: String)
+    func setupPickerView()
 }

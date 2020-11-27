@@ -22,8 +22,6 @@ final class RegisterPageViewModelTest: XCTestCase {
         viewModel.password = "A"
         viewModel.reenterPassword = "B"
         
-        // Call Register method
-        
         viewModel.register()
         
         // Expectation: Should show banner
@@ -64,7 +62,7 @@ final class RegisterPageViewModelTest: XCTestCase {
         
         viewModel.register()
         
-        // Expectation: should call On Register Finish
+        // Expectation: should call show error view
         
         XCTAssertFalse(actionMock.isOnRegisterFinishCalled)
         XCTAssertTrue(actionMock.isHideLoadingViewCalled)

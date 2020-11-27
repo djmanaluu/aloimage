@@ -49,6 +49,7 @@ final class ProfileViewModel {
             
             self?.action?.hideLoadingView()
             self?.action?.configureProfilePage()
+            self?.action?.setupPickerView()
         }) { [weak self] error in
             self?.action?.hideLoadingView()
             self?.action?.showNetworkError { [weak self] in

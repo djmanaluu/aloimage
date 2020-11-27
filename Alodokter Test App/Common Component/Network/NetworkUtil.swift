@@ -109,6 +109,30 @@ final class NetworkUtil {
         return dataTask
     }
     
+    @discardableResult
+    static func requestWithToken<T: Decodable>(from urlString: String,
+                                               responseType: T.Type,
+                                               httpMethod: HTTPMethod?,
+                                               header: [String: String] = [:],
+                                               parameters: [String: Any]?,
+                                               httpStatusCodeHandler: ((Int) -> Bool)? = nil,
+                                               onSuccess: @escaping (T) -> Void,
+                                               onFailure: @escaping (Error) -> Void) -> URLSessionDataTask? {
+        let parametersWithToken: [String: Any] = [
+            "data": parameters ?? [:],
+            "token": Auth.token ?? ""
+        ]
+        
+        return request(from: urlString,
+                       responseType: responseType,
+                       httpMethod: httpMethod,
+                       header: header,
+                       parameters: parametersWithToken,
+                       httpStatusCodeHandler: httpStatusCodeHandler,
+                       onSuccess: onSuccess,
+                       onFailure: onFailure)
+    }
+    
     static func requestData(from urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         guard let url: URL = URL(string: urlString) else { return }
         
