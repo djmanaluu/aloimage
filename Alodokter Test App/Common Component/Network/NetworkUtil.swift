@@ -108,5 +108,11 @@ final class NetworkUtil {
         
         return dataTask
     }
+    
+    static func requestData(from urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        guard let url: URL = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
 }
 

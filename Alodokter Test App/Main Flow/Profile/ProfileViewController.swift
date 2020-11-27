@@ -10,7 +10,7 @@ import UIKit
 
 private let kProfilePictureSize: CGFloat = 120.0
 
-final class ProfileViewController: BaseViewController {
+final class ProfileViewController: TabbarBaseViewController {
     // MARK: - Properties
     
     private lazy var profilePicture: UIImageView = {
@@ -25,7 +25,7 @@ final class ProfileViewController: BaseViewController {
     }()
     
     private lazy var nameTextField: CommonTextFieldContainer = {
-        let nameTextField: CommonTextFieldContainer = CommonTextFieldContainer()
+        let nameTextField: CommonTextFieldContainer = CommonTextFieldContainer(borderColor: .gray)
         
         nameTextField.addTarget(self, action: #selector(onProfileValuesChanged), for: .editingChanged)
         nameTextField.placeholder = "Name"
@@ -34,22 +34,33 @@ final class ProfileViewController: BaseViewController {
     }()
     
     private lazy var genderTextField: CommonTextFieldContainer = {
-        let genderTextField: CommonTextFieldContainer = CommonTextFieldContainer()
+        let genderTextField: CommonTextFieldContainer = CommonTextFieldContainer(borderColor: .gray)
         
-        nameTextField.addTarget(self, action: #selector(onProfileValuesChanged), for: .editingChanged)
+        genderTextField.addTarget(self, action: #selector(onProfileValuesChanged), for: .editingChanged)
         genderTextField.placeholder = "Gender"
         
         return genderTextField
    }()
     
     private lazy var phoneNumberTextField: CommonTextFieldContainer = {
-        let phoneNumberTextField: CommonTextFieldContainer = CommonTextFieldContainer()
+        let phoneNumberTextField: CommonTextFieldContainer = CommonTextFieldContainer(borderColor: .gray)
         
-        nameTextField.addTarget(self, action: #selector(onProfileValuesChanged), for: .editingChanged)
+        phoneNumberTextField.addTarget(self, action: #selector(onProfileValuesChanged), for: .editingChanged)
         phoneNumberTextField.placeholder = "Phone Number"
         phoneNumberTextField.keyboardType = .numberPad
         
         return phoneNumberTextField
+    }()
+    
+    private lazy var notificationLabel: UILabel = {
+        let notificationLabel: UILabel = UILabel()
+        
+        notificationLabel.font = .systemFont(ofSize: 12.0)
+        notificationLabel.numberOfLines = 0
+        notificationLabel.text = "* Please make sure that you fill in all the fields and Profile Picture. Update button will available if there's any changes from any field and all fields are filled."
+        notificationLabel.textColor = .red
+        
+        return notificationLabel
     }()
     
     private lazy var updateButton: CommonButton = CommonButton(isButtonActived: false)
@@ -93,7 +104,7 @@ final class ProfileViewController: BaseViewController {
     
     private func setupView() {
         let containerView: UIView = UIView()
-        
+        let logoutButton: CommonButton = CommonButton()
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
         
         showBackButton(false)
@@ -109,9 +120,13 @@ final class ProfileViewController: BaseViewController {
         containerView.backgroundColor = .white
         containerView.layer.cornerRadius = 10.0
         containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.5
         containerView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        containerView.layer.shadowOpacity = 0.5
         containerView.layer.shadowRadius = 5.0
+        
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        logoutButton.backgroundColor = UIColor.red
+        logoutButton.setTitle("Logout", for: .normal)
         
         profilePicture.backgroundColor = .darkGray
         profilePicture.layer.cornerRadius = kProfilePictureSize / 2.0
@@ -123,18 +138,30 @@ final class ProfileViewController: BaseViewController {
         view.addSubview(containerView)
         view.addSubview(profilePicture)
         view.addSubview(updateButton)
+        view.addSubview(logoutButton)
+        view.addSubview(notificationLabel)
         
         containerView.addSubview(nameTextField)
         containerView.addSubview(genderTextField)
         containerView.addSubview(phoneNumberTextField)
         
         containerView.makeConstraints { make in
-            make.top.equalTo(view, position: .topSafeArea, constant: 100.0)
+            make.top.equalTo(view, position: .topSafeArea, constant: 60.0)
             make.left.equalTo(view, constant: 16.0)
             make.right.equalTo(view, constant: -16.0)
         }
         
+        notificationLabel.makeConstraints { make in
+            make.top.equalTo(containerView, position: .bottom, constant: 8.0)
+            make.left.right.equalTo(containerView)
+        }
+        
         updateButton.makeConstraints { make in
+            make.bottom.equalTo(logoutButton, position: .top, constant: -12.0)
+            make.left.right.equalTo(containerView)
+        }
+        
+        logoutButton.makeConstraints { make in
             make.bottom.equalTo(view, position: .bottomSafeArea, constant: -16.0)
             make.left.right.equalTo(containerView)
         }
@@ -152,16 +179,16 @@ final class ProfileViewController: BaseViewController {
         }
         
         genderTextField.makeConstraints { make in
-            make.top.equalTo(nameTextField, position: .bottom, constant: 16.0)
+            make.top.equalTo(nameTextField, position: .bottom, constant: 8.0)
             make.left.equalTo(containerView, constant: 16.0)
             make.right.equalTo(containerView, constant: -16.0)
         }
         
         phoneNumberTextField.makeConstraints { make in
-            make.top.equalTo(genderTextField, position: .bottom, constant: 16.0)
+            make.top.equalTo(genderTextField, position: .bottom, constant: 8.0)
             make.left.equalTo(containerView, constant: 16.0)
             make.right.equalTo(containerView, constant: -16.0)
-            make.bottom.equalTo(containerView, constant: -16.0)
+            make.bottom.equalTo(containerView, constant: -12.0)
         }
     }
     
@@ -236,6 +263,11 @@ final class ProfileViewController: BaseViewController {
         
         updateButton.isActived(isProfileValuesNotEmpty && isProfilesValuesIsChanged)
     }
+    
+    @objc
+    private func logout() {
+        coordinator?.logout()
+    }
 }
 
 extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
@@ -254,6 +286,7 @@ extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource, U
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedgenderValue = genderValue[row]
         genderTextField.text = selectedgenderValue
+        onProfileValuesChanged()
     }
 }
 

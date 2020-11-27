@@ -9,6 +9,14 @@
 import UIKit
 
 final class CommonTextFieldContainer: UITextField {
+    // MARK: - Init
+    
+    init(borderColor: UIColor) {
+        super.init(frame: .zero)
+        
+        setupView(borderColor: borderColor)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -21,11 +29,11 @@ final class CommonTextFieldContainer: UITextField {
     
     // MARK: - Private Methods
     
-    private func setupView() {
+    private func setupView(borderColor: UIColor = .themePrimary) {
         let leftView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 8.0, height: 16.0))
         let rightView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 8.0, height: 16.0))
         
-        layer.borderColor = UIColor.themePrimary.cgColor
+        layer.borderColor = borderColor.cgColor
         layer.borderWidth = 2.0
         layer.cornerRadius = 10.0
         self.leftView = leftView

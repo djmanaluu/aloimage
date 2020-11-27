@@ -7,5 +7,5 @@
 //
 
 class LoginBaseViewController: BaseViewController {
-    weak var coordinator: LoginFlowCoordinator?
+    var coordinator: LoginFlowCoordinator?
 }

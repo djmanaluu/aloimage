@@ -40,6 +40,9 @@ final class Auth {
     
     static func userLogout(completion: (() -> Void)? = nil) {
         token = nil
+        
+        AppCoordinator.shared.logout()
+        
         completion?()
     }
 }

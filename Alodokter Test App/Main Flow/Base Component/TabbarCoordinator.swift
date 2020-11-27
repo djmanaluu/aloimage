@@ -74,6 +74,11 @@ final class TabbarCoordinator: NSObject, Coordinator {
         tabbarController.selectedIndex = page.tabbarIndex()
     }
     
+    func logout() {
+        Auth.token = nil
+        finish()
+    }
+    
     // MARK: - Private Methods
     
     private func prepareTabbarController(withViewControllers viewControllers: [UIViewController]) {
@@ -93,14 +98,16 @@ final class TabbarCoordinator: NSObject, Coordinator {
         
         switch page {
         case .home:
-            let viewController: HomeViewController = HomeViewController()
+            let viewController: HomeViewController = HomeViewController.constructController()
             
+            viewController.coordinator = self
             navigationController.pushViewController(viewController, animated: true)
             
             break
         case .profile:
             let viewController: ProfileViewController = ProfileViewController.constructController()
             
+            viewController.coordinator = self
             navigationController.pushViewController(viewController, animated: true)
             
             break

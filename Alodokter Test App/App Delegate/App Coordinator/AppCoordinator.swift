@@ -52,6 +52,11 @@ final class AppCoordinator: Coordinator {
         child.start()
     }
     
+    func logout() {
+        childCoordinators = []
+        openLogInFlow()
+    }
+    
     func childDidFinish(_ child: Coordinator?) {
         childCoordinators = childCoordinators.filter({ $0 !== child })
         

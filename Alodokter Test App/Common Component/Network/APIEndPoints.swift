@@ -14,7 +14,6 @@ enum APIEndPoints: String {
     case register = "/api/users/register"
     
     case getContents = "/api/contents"
-    case addContent = "/api/contents/add"
     
     case userProfile = "/api/profile"
     

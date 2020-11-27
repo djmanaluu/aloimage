@@ -26,8 +26,6 @@ final class GetProfileResponse: Codable {
                             onSuccess: onSuccess,
                             onFailure: onFailure)
     }
-    
-    
 }
 
 final class PostProfileResponse: Codable {
