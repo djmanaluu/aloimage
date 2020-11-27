@@ -94,7 +94,7 @@ final class TabbarCoordinator: NSObject, Coordinator {
         tabbarController.selectedIndex = TabbarPage.home.tabbarIndex()
         tabbarController.tabBar.isTranslucent = false
         
-        navigationController.setNavigationBarHidden(true, animated: true)
+        navigationController.setNavigationBarHidden(false, animated: true)
         navigationController.viewControllers = [tabbarController]
     }
     
