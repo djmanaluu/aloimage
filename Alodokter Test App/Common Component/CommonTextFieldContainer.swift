@@ -33,6 +33,8 @@ final class CommonTextFieldContainer: UITextField {
         let leftView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 8.0, height: 16.0))
         let rightView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 8.0, height: 16.0))
         
+        autocorrectionType = .no
+        autocapitalizationType = .none
         layer.borderColor = borderColor.cgColor
         layer.borderWidth = 2.0
         layer.cornerRadius = 10.0
