@@ -308,7 +308,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
-extension ProfileViewController: ProfileContracts {
+extension ProfileViewController: ProfileViewModelAction {
     func configureProfilePage() {
         nameTextField.text = viewModel.name
         genderTextField.text = viewModel.gender

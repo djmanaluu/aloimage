@@ -77,19 +77,6 @@ extension BaseViewController: BaseViewModelAction {
         loadingView.removeFromSuperview()
     }
     
-    func showErrorView(imageName: String,
-                       description: String,
-                       retryButtonLabel: String,
-                       retryButtonAction: @escaping () -> Void) {
-        errorView.configureErrorView(retryButtonAction: retryButtonAction)
-        
-        view.addSubview(errorView)
-        
-        errorView.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(view)
-        }
-    }
-    
     func showNetworkError(retryButtonAction: @escaping (() -> Void)) {
         errorView.configureErrorView { [weak self] in
             guard let self: BaseViewController = self else { return }

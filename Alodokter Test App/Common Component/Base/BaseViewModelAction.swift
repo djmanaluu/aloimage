@@ -9,10 +9,6 @@
 protocol BaseViewModelAction: AnyObject {
     func showLoadingView()
     func hideLoadingView()
-    func showErrorView(imageName: String,
-                       description: String,
-                       retryButtonLabel: String,
-                       retryButtonAction: @escaping (() -> Void))
     func showNetworkError(retryButtonAction: @escaping (() -> Void))
     func hideErrorView()
 }

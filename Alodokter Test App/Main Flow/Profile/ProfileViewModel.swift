@@ -23,7 +23,7 @@ final class ProfileViewModelDependency {
 final class ProfileViewModel {
     // MARK: - Properties
     
-    weak var action: (BaseViewModelAction & ProfileContracts)?
+    weak var action: (BaseViewModelAction & ProfileViewModelAction)?
     
     var name: String = ""
     var gender: String = ""

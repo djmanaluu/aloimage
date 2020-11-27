@@ -45,7 +45,7 @@
 		63FFDF9A2570158E00016A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FFDF992570158E00016A00 /* Assets.xcassets */; };
 		63FFDF9C25701B0D00016A00 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF9B25701B0D00016A00 /* ProfileViewModel.swift */; };
 		63FFDF9F25701B9900016A00 /* GetProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDF9E25701B9900016A00 /* GetProfileResponse.swift */; };
-		63FFDFA12570203300016A00 /* ProfileContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFA02570203300016A00 /* ProfileContracts.swift */; };
+		63FFDFA12570203300016A00 /* ProfileViewModelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFA02570203300016A00 /* ProfileViewModelAction.swift */; };
 		63FFDFA42570938A00016A00 /* TabbarBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFA32570938A00016A00 /* TabbarBaseViewController.swift */; };
 		63FFDFA625709B6200016A00 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFA525709B6200016A00 /* HomeViewModel.swift */; };
 		63FFDFA825709C0400016A00 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFA725709C0400016A00 /* HomeContracts.swift */; };
@@ -54,6 +54,14 @@
 		63FFDFB02570A7A600016A00 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFAF2570A7A600016A00 /* UIImage+Extension.swift */; };
 		63FFDFB32570B28700016A00 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFB22570B28700016A00 /* ContentDetailViewController.swift */; };
 		63FFDFB72570D24700016A00 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFB62570D24700016A00 /* ProfileImage.swift */; };
+		63FFDFBB2570E3CC00016A00 /* LoginPageMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFBA2570E3CC00016A00 /* LoginPageMocks.swift */; };
+		63FFDFBF2570E7FE00016A00 /* LoginPageViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFBE2570E7FE00016A00 /* LoginPageViewModelTest.swift */; };
+		63FFDFC22570EF9900016A00 /* ResgisterPageViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFC12570EF9900016A00 /* ResgisterPageViewModelTest.swift */; };
+		63FFDFC42570EFA200016A00 /* RegisterPageMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFC32570EFA200016A00 /* RegisterPageMocks.swift */; };
+		63FFDFC92570EFCD00016A00 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFC82570EFCD00016A00 /* HomeViewModelTest.swift */; };
+		63FFDFCB2570EFD300016A00 /* HomeMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFCA2570EFD300016A00 /* HomeMocks.swift */; };
+		63FFDFCD2570EFE100016A00 /* ProfileViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFCC2570EFE100016A00 /* ProfileViewModelTest.swift */; };
+		63FFDFCF2570EFED00016A00 /* ProfileMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDFCE2570EFED00016A00 /* ProfileMocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +126,7 @@
 		63FFDF992570158E00016A00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FFDF9B25701B0D00016A00 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		63FFDF9E25701B9900016A00 /* GetProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileResponse.swift; sourceTree = "<group>"; };
-		63FFDFA02570203300016A00 /* ProfileContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContracts.swift; sourceTree = "<group>"; };
+		63FFDFA02570203300016A00 /* ProfileViewModelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelAction.swift; sourceTree = "<group>"; };
 		63FFDFA32570938A00016A00 /* TabbarBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarBaseViewController.swift; sourceTree = "<group>"; };
 		63FFDFA525709B6200016A00 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		63FFDFA725709C0400016A00 /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
@@ -127,6 +135,14 @@
 		63FFDFAF2570A7A600016A00 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		63FFDFB22570B28700016A00 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		63FFDFB62570D24700016A00 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		63FFDFBA2570E3CC00016A00 /* LoginPageMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageMocks.swift; sourceTree = "<group>"; };
+		63FFDFBE2570E7FE00016A00 /* LoginPageViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModelTest.swift; sourceTree = "<group>"; };
+		63FFDFC12570EF9900016A00 /* ResgisterPageViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResgisterPageViewModelTest.swift; sourceTree = "<group>"; };
+		63FFDFC32570EFA200016A00 /* RegisterPageMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageMocks.swift; sourceTree = "<group>"; };
+		63FFDFC82570EFCD00016A00 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		63FFDFCA2570EFD300016A00 /* HomeMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocks.swift; sourceTree = "<group>"; };
+		63FFDFCC2570EFE100016A00 /* ProfileViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTest.swift; sourceTree = "<group>"; };
+		63FFDFCE2570EFED00016A00 /* ProfileMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +278,8 @@
 		637DE249256F448C0059178E /* Alodokter Test AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				63FFDFC52570EFA900016A00 /* Main Flow */,
+				63FFDFB82570E37A00016A00 /* Login Flow */,
 				637DE24A256F448C0059178E /* Alodokter_Test_AppTests.swift */,
 				637DE24C256F448C0059178E /* Info.plist */,
 			);
@@ -399,7 +417,7 @@
 				63FFDF9D25701B8800016A00 /* Response */,
 				63FFDF95256FF4D500016A00 /* ProfileViewController.swift */,
 				63FFDF9B25701B0D00016A00 /* ProfileViewModel.swift */,
-				63FFDFA02570203300016A00 /* ProfileContracts.swift */,
+				63FFDFA02570203300016A00 /* ProfileViewModelAction.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -443,6 +461,60 @@
 				63FFDFB22570B28700016A00 /* ContentDetailViewController.swift */,
 			);
 			path = "Content Detail";
+			sourceTree = "<group>";
+		};
+		63FFDFB82570E37A00016A00 /* Login Flow */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDFC02570EF8500016A00 /* Register Page */,
+				63FFDFB92570E3B600016A00 /* Login Page */,
+			);
+			path = "Login Flow";
+			sourceTree = "<group>";
+		};
+		63FFDFB92570E3B600016A00 /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDFBE2570E7FE00016A00 /* LoginPageViewModelTest.swift */,
+				63FFDFBA2570E3CC00016A00 /* LoginPageMocks.swift */,
+			);
+			path = "Login Page";
+			sourceTree = "<group>";
+		};
+		63FFDFC02570EF8500016A00 /* Register Page */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDFC12570EF9900016A00 /* ResgisterPageViewModelTest.swift */,
+				63FFDFC32570EFA200016A00 /* RegisterPageMocks.swift */,
+			);
+			path = "Register Page";
+			sourceTree = "<group>";
+		};
+		63FFDFC52570EFA900016A00 /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDFC62570EFB700016A00 /* Home */,
+				63FFDFC72570EFBB00016A00 /* Profile */,
+			);
+			path = "Main Flow";
+			sourceTree = "<group>";
+		};
+		63FFDFC62570EFB700016A00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDFC82570EFCD00016A00 /* HomeViewModelTest.swift */,
+				63FFDFCA2570EFD300016A00 /* HomeMocks.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		63FFDFC72570EFBB00016A00 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDFCC2570EFE100016A00 /* ProfileViewModelTest.swift */,
+				63FFDFCE2570EFED00016A00 /* ProfileMocks.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,7 +682,7 @@
 				63FFDFB72570D24700016A00 /* ProfileImage.swift in Sources */,
 				63FFDF86256FB79C00016A00 /* ErrorStateView.swift in Sources */,
 				637DE234256F448B0059178E /* AppDelegate.swift in Sources */,
-				63FFDFA12570203300016A00 /* ProfileContracts.swift in Sources */,
+				63FFDFA12570203300016A00 /* ProfileViewModelAction.swift in Sources */,
 				63FFDF8A256FB98300016A00 /* LoadingCircleView.swift in Sources */,
 				63FFDF82256FB1E900016A00 /* BannerView.swift in Sources */,
 				63FFDFA42570938A00016A00 /* TabbarBaseViewController.swift in Sources */,
@@ -625,7 +697,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFDFC42570EFA200016A00 /* RegisterPageMocks.swift in Sources */,
+				63FFDFCB2570EFD300016A00 /* HomeMocks.swift in Sources */,
+				63FFDFCD2570EFE100016A00 /* ProfileViewModelTest.swift in Sources */,
+				63FFDFC22570EF9900016A00 /* ResgisterPageViewModelTest.swift in Sources */,
+				63FFDFBB2570E3CC00016A00 /* LoginPageMocks.swift in Sources */,
+				63FFDFC92570EFCD00016A00 /* HomeViewModelTest.swift in Sources */,
 				637DE24B256F448C0059178E /* Alodokter_Test_AppTests.swift in Sources */,
+				63FFDFCF2570EFED00016A00 /* ProfileMocks.swift in Sources */,
+				63FFDFBF2570E7FE00016A00 /* LoginPageViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,7 +901,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Alodokter Test AppTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,7 +922,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Alodokter Test AppTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
