@@ -58,7 +58,7 @@ If we click the album, will be directed to **Content Detail Page**
 This page will show all image from album that we selected.<br>
 There's a pagination.
 
- <img src="images/Content%Viewer.png" width="250">
+ <img src="images/Content%20Viewer.png" width="250">
 
 **3. Profile Page** (directory: Alodokter Test App/Main Flow/Profile)
 
