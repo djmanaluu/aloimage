@@ -20,7 +20,8 @@ There are some Unit-Testing to test all View Model and I used Dependency Injecti
 
 ## Login Flow
 
-**1. Login Page** (directory: Alodokter Test App/Login Flow/Login Page)
+**1. Login Page** <br>
+*(directory: Alodokter Test App/Login Flow/Login Page)*
 
 We can login with this page with 2 parameters (email and password).
 If you don't have the account, you should register first in Register Page by click **Register Here** button on this page.
@@ -31,7 +32,8 @@ There are some conditions here:
 
 <img src="images/Login%20Page.png" width="250">
 
-**2. Register Page** (directory: Alodokter Test App/Login Flow/Register Page)
+**2. Register Page** <br>
+*(directory: Alodokter Test App/Login Flow/Register Page)*
 
 We can Register for new account here.
 
@@ -46,21 +48,24 @@ We can Register for new account here.
 
 In the Main Flow there's an tabbar Here
 
-**1. Home Page** (directory: Alodokter Test App/Main Flow/Home)
+**1. Home Page** <br>
+*(directory: Alodokter Test App/Main Flow/Home)*
 
 In this page, will be shown all album (each album will be shown by the first image only)<br>
 If we click the album, will be directed to **Content Detail Page**
 
 <img src="images/Home%20Page.png" width="250">
 
-**2. Content Detail Page** (directory: Alodokter Test App/Main Flow/Content Detail)
+**2. Content Detail Page** <br>
+*(directory: Alodokter Test App/Main Flow/Content Detail)*
 
 This page will show all image from album that we selected.<br>
 There's a pagination.
 
  <img src="images/Content%20Viewer.png" width="250">
 
-**3. Profile Page** (directory: Alodokter Test App/Main Flow/Profile)
+**3. Profile Page**<br>
+*(directory: Alodokter Test App/Main Flow/Profile)*
 
 This page to show the user's profile and user can edit the image and other fields.<br>
 
