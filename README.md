@@ -1,4 +1,4 @@
-<p align="center"><img src="images/aloimage-logo.jpg" width="100"></p>
+<p align="center"><img src="images/aloimage-logo.jpg" width="70"></p>
 
 <h1 align="center">Aloimage App</h1>
 
@@ -9,18 +9,17 @@ Here's the Repo of the API:
 
 **https://github.com/djmanaluu/aloimage-api**
 
-
-<p align="center"><img src="images/Repo.png" width="400"></p>
+<img src="images/Repo.png" width="400">
 
 ## B. Design Pattern
 
 I used MVVM + Coordinator
 
-## Unit Testing
+## C. Unit Testing
 
 There are some Unit-Testing to test all View Model and I used Dependency Injection to test the fetcher to mock the fetch process.
 
-## Login Flow
+## D. Login Flow
 
 **1. Login Page** <br>
 *(directory: Alodokter Test App/Login Flow/Login Page)*
@@ -32,7 +31,7 @@ There are some conditions here:
 - To activated the login button, we should make sure that the email and password text field is not empty.
 - If login is failed, there will be a banner view on the top of the page that will inform user that the email and password are wrong.
 
-<p align="center"><img src="images/Login%20Page.png" width="250"></p>
+<img src="images/Login%20Page.png" width="250">
 
 **2. Register Page** <br>
 *(directory: Alodokter Test App/Login Flow/Register Page)*
@@ -44,9 +43,9 @@ We can Register for new account here.
 **- There is no checker that the text that typed is email because we can use simple username here to help us to make an easier test**
 **- There's no email verification and reset password here**
 
-<p align="center"><img src="images/Register%20Page.png" width="250"></p>
+<img src="images/Register%20Page.png" width="250">
 
-## Main Flow
+## E. Main Flow
 
 In the Main Flow there's an tabbar Here
 
@@ -56,7 +55,7 @@ In the Main Flow there's an tabbar Here
 In this page, will be shown all album (each album will be shown by the first image only)<br>
 If we click the album, will be directed to **Content Detail Page**
 
-<p align=”center”><img src="images/Home%20Page.png" width="250"></p>
+<img src="images/Home%20Page.png" width="250">
 
 **2. Content Detail Page** <br>
 *(directory: Alodokter Test App/Main Flow/Content Detail)*
@@ -64,7 +63,7 @@ If we click the album, will be directed to **Content Detail Page**
 This page will show all image from album that we selected.<br>
 There's a pagination.
 
-<p align=”center”><img src="images/Content%20Viewer.png" width="250"></p>
+<img src="images/Content%20Viewer.png" width="250">
 
 **3. Profile Page**<br>
 *(directory: Alodokter Test App/Main Flow/Profile)*
@@ -74,4 +73,5 @@ This page to show the user's profile and user can edit the image and other field
 Conditions:
 - For image just saved on local (using UserDefaults), for all text fields will be saved on server.
 - Update button will be activated if only all text fields are not empty and there are any changes on all text fields. After upload, the button will be deactivated again.
-<p align=”center”><img src="images/Profile%20Page.png" width="250"></p>
+
+<img src="images/Profile%20Page.png" width="250">
