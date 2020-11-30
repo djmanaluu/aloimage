@@ -8,13 +8,24 @@
 
 import UIKit
 
+let imageCache: NSCache<NSString, AnyObject> = NSCache<NSString, AnyObject>()
+
 extension UIImageView {
     func setImage(withUrlString urlString: String) {
-        NetworkUtil.requestData(from: urlString) { data, _, _ in
-            DispatchQueue.main.async { [weak self] in
-                guard let self: UIImageView = self, let imageData: Data = data else { return }
-                
-                self.image = UIImage(data: imageData)
+        if let cacheImageData: UIImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
+            image = cacheImageData
+        }
+        else {
+            NetworkUtil.requestData(from: urlString) { data, _, _ in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self: UIImageView = self, let imageData: Data = data else { return }
+                    
+                    if let image: UIImage = UIImage(data: imageData) {
+                        imageCache.setObject(image, forKey: urlString as NSString)
+                        
+                        self.image = image
+                    }
+                }
             }
         }
     }
