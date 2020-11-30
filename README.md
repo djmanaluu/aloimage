@@ -1,6 +1,8 @@
-# Aloimage App
+<p align="center"><img src="images/aloimage-logo.jpg" width="100"></p>
 
-## API
+<h1 align="center">Aloimage App</h1>
+
+## A. API
 
 For API I used Vapor (a Swift Framework for Web App) and Heroku.<br>
 Here's the Repo of the API:
@@ -8,9 +10,9 @@ Here's the Repo of the API:
 **https://github.com/djmanaluu/aloimage-api**
 
 
-<img src="images/Repo.png" width="400"> </img>
+<p align="center"><img src="images/Repo.png" width="400"></p>
 
-## Design Patter
+## B. Design Pattern
 
 I used MVVM + Coordinator
 
@@ -30,7 +32,7 @@ There are some conditions here:
 - To activated the login button, we should make sure that the email and password text field is not empty.
 - If login is failed, there will be a banner view on the top of the page that will inform user that the email and password are wrong.
 
-<img src="images/Login%20Page.png" width="250">
+<p align="center"><img src="images/Login%20Page.png" width="250"></p>
 
 **2. Register Page** <br>
 *(directory: Alodokter Test App/Login Flow/Register Page)*
@@ -42,7 +44,7 @@ We can Register for new account here.
 **- There is no checker that the text that typed is email because we can use simple username here to help us to make an easier test**
 **- There's no email verification and reset password here**
 
-<img src="images/Register%20Page.png" width="250">
+<p align="center"><img src="images/Register%20Page.png" width="250"></p>
 
 ## Main Flow
 
@@ -54,7 +56,7 @@ In the Main Flow there's an tabbar Here
 In this page, will be shown all album (each album will be shown by the first image only)<br>
 If we click the album, will be directed to **Content Detail Page**
 
-<img src="images/Home%20Page.png" width="250">
+<p align=”center”><img src="images/Home%20Page.png" width="250"></p>
 
 **2. Content Detail Page** <br>
 *(directory: Alodokter Test App/Main Flow/Content Detail)*
@@ -62,7 +64,7 @@ If we click the album, will be directed to **Content Detail Page**
 This page will show all image from album that we selected.<br>
 There's a pagination.
 
- <img src="images/Content%20Viewer.png" width="250">
+<p align=”center”><img src="images/Content%20Viewer.png" width="250"></p>
 
 **3. Profile Page**<br>
 *(directory: Alodokter Test App/Main Flow/Profile)*
@@ -72,6 +74,4 @@ This page to show the user's profile and user can edit the image and other field
 Conditions:
 - For image just saved on local (using UserDefaults), for all text fields will be saved on server.
 - Update button will be activated if only all text fields are not empty and there are any changes on all text fields. After upload, the button will be deactivated again.
-<img src="images/Profile%20Page.png" width="250">
-
-
+<p align=”center”><img src="images/Profile%20Page.png" width="250"></p>
